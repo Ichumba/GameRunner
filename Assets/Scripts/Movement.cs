@@ -8,7 +8,7 @@ using UnityEngine;
 public class Movement3D : MonoBehaviour
 {
     Vector3 _direction ;
-    [SerializeField] float _speed ;
+    public float speed ;
     Rigidbody _rigidbody ;
     CapsuleCollider _capsule;
     [SerializeField] ForceMode _forceMode ;
@@ -45,7 +45,7 @@ public class Movement3D : MonoBehaviour
     {
         // _rigidbody.MovePosition( transform.position + (_speed * _direction * Time.fixedDeltaTime ));
         //_rigidbody.AddForce(_speed * _direction, _forceMode);
-        _rigidbody.velocity = _direction * _speed;
+        _rigidbody.velocity = _direction * speed;
 
     }
 }
