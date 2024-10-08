@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class WeaponPlayer : MonoBehaviour
 {
-    // Start is called before the first frame update
+    public int daño;
     void Start()
     {
         
@@ -15,4 +15,11 @@ public class WeaponPlayer : MonoBehaviour
     {
         
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        
+    }
+
+
 }

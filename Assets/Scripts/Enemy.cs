@@ -4,15 +4,29 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    // Start is called before the first frame update
+    protected int Life;
+    public int Damage;
+    [SerializeField] protected Transform player;
+    protected WeaponPlayer Arma;
+    protected Rigidbody rb;
+
     void Start()
     {
-        
+        Arma = player.GetComponent<WeaponPlayer>();
+        rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
+    void RecieveDamage()
     {
-        
+        Life -= Arma.daño;
+
+        if (Life <= 0)
+        {
+            Destroy(gameObject);
+        }
+
     }
+
+
 }
+

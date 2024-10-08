@@ -16,6 +16,7 @@ public class ControlManager : MonoBehaviour
     private void Start()
     {
         _movement =GetComponent<MovementPlayer>();
+        _animationPlayer = GetComponent<AmimantionPlayer>();
     }
 
     public void ArtificialUpdate()

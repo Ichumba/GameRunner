@@ -24,7 +24,12 @@ public class MovementPlayer : MonoBehaviour
         _speed = speed;  
     }
 
-    
+    private void Start()
+    {
+        _rigidbody = GetComponent<Rigidbody>();
+    }
+
+
     public void Move(float Vertical, float Horizontal )
     {
        playerVelocity = new Vector3(Horizontal, 0 , Vertical);
@@ -42,8 +47,6 @@ public class MovementPlayer : MonoBehaviour
     public void Jump()
     {
         _rigidbody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
-        
-       
     }
     public virtual void FixedUpdate()
     {
