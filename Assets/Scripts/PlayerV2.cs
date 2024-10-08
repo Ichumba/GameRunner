@@ -5,14 +5,9 @@ using UnityEngine;
 public class PlayerFPS : MonoBehaviour
 {
 
-    void Start()
-    {
-        
-    }
+   [SerializeField] private float _life;
+   [SerializeField] private float _maxLife;
+    
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
 }
