@@ -3,18 +3,22 @@ using System.Collections.Generic;
 
 using UnityEngine;
 
-public class ControlManager 
+public class ControlManager : MonoBehaviour
 {
 
-    MovementPlayer _movement;
+    MovementPlayer  _movement;
     AmimantionPlayer _animationPlayer;
     public ControlManager(MovementPlayer movement, AmimantionPlayer animation)
     {
         _animationPlayer = animation;
         _movement = movement;
     }
+    private void Start()
+    {
+        _movement =GetComponent<MovementPlayer>();
+    }
 
-   public void ArtificialUpdate()
+    public void ArtificialUpdate()
     {
         var Vertical = Input.GetAxis("Vertical");
         var Horizontal = Input.GetAxis("Horizontal");

@@ -7,7 +7,7 @@ using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 
 
-public class MovementPlayer
+public class MovementPlayer : MonoBehaviour
 {
     
     private Vector3 playerVelocity ;
@@ -43,7 +43,7 @@ public class MovementPlayer
     {
         _rigidbody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
         
-        return;
+       
     }
     public virtual void FixedUpdate()
     {
