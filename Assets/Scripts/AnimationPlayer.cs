@@ -4,26 +4,29 @@ using UnityEngine;
 
 public class AnimationPlayer : MonoBehaviour
 {
-    [SerializeField] private float _movSpeed;
+    [SerializeField] public float _movSpeed = 5f;  
     private float _xAxis, _zAxis;
-    
+
     [Header("Animator")]
     [SerializeField] private string _xAxisName = "xAxis";
     [SerializeField] private string _zAxisName = "zAxis";
     private Animator animator;
     private Rigidbody _rb;
+
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
     }
-    void Start()
 
+    void Start()
     {
         _rb.constraints = RigidbodyConstraints.FreezeRotation;
         animator = GetComponentInChildren<Animator>();
+
+        
+        _movSpeed = 5f;
     }
 
-    // Update is called once per frame
     void Update()
     {
         _xAxis = Input.GetAxis("Horizontal");
@@ -31,6 +34,7 @@ public class AnimationPlayer : MonoBehaviour
         animator.SetFloat(_xAxisName, _xAxis);
         animator.SetFloat(_zAxisName, _zAxis);
     }
+
     private void FixedUpdate()
     {
         if (_xAxis != 0 || _zAxis != 0)
@@ -38,10 +42,10 @@ public class AnimationPlayer : MonoBehaviour
             Movement(_xAxis, _zAxis);
         }
     }
+
     void Movement(float xAxis, float zAxis)
     {
         Vector3 dir = (transform.right * xAxis + transform.forward * zAxis).normalized;
-
-        _rb.MovePosition(transform.position += dir * _movSpeed * Time.fixedDeltaTime);
+        _rb.MovePosition(transform.position + dir * _movSpeed * Time.fixedDeltaTime);
     }
 }
