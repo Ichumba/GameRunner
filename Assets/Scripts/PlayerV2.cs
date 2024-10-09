@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerFPS : MonoBehaviour
 {
 
-   [SerializeField] public float _life;
+   public float _life;
    [SerializeField] private float _maxLife;
     
     public void TakeDamage()

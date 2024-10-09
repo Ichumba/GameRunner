@@ -36,7 +36,7 @@ public class Turret : Enemy
     {
         Bullet bullet =Instantiate(bala, transform.position, transform.rotation* Quaternion.Euler(90f, 0f, 0f));
         bala.damage = Damage;
-        bala.Jugador = Jugador;
+        bala.PJ = Jugador;
         delay = shoot;
     }
 

@@ -5,8 +5,8 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Bullet : MonoBehaviour
 {
-    public PlayerFPS Jugador;
-    public float damage;
+    public PlayerFPS PJ;
+    public int damage;
     [SerializeField] private float speed;
     private Rigidbody rb;
 
@@ -27,7 +27,7 @@ public class Bullet : MonoBehaviour
         if (col.gameObject.layer == Layer.Player)
         {
             print("Direct impact");
-            Jugador._life -= damage;
+            PJ._life -= damage;
             Destroy(gameObject);
         }
         else
