@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Chaser : Enemy
 {
@@ -16,7 +17,19 @@ public class Chaser : Enemy
         transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
 
         Quaternion rotation = Quaternion.Euler(0f, rb.rotation.y, 0f);
-        //transform.up = direction;
         rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * (Vector3)(rotation * direction));
     }
+
+    private void OnTriggerEnter(Collider col)
+    {
+
+        if (col.gameObject.layer == Layer.Player)
+        {
+            Jugador._life -= Damage;
+        }
+
+
+    }
+
+
 }
