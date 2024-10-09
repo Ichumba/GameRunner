@@ -72,7 +72,7 @@ public class AnimationPlayer : MonoBehaviour
     }
     public void OnAttack()
     {
-        print(gameObject.name + " Ataco");
+        //print(gameObject.name + " Ataco");
     }
     private bool CanJump()
     {
