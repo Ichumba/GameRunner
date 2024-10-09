@@ -26,7 +26,13 @@ public class Bullet : MonoBehaviour
 
         if (col.gameObject.layer == Layer.Player)
         {
+            print("Direct impact");
             Jugador._life -= damage;
+            Destroy(gameObject);
+        }
+        else
+        if (col.gameObject.layer == Layer.Pared)
+        {
             Destroy(gameObject);
         }
 
@@ -41,8 +47,7 @@ public class Bullet : MonoBehaviour
     private class Layer
     {
         public const int Player = 6;
-        public const int Obstacle = 7;
-        public const int Misile = 11;
+        public const int Pared = 8;
     }
 
 

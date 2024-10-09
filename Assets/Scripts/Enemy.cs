@@ -32,8 +32,6 @@ public class Enemy : MonoBehaviour
     protected class Layer
     {
         public const int Player = 6;
-        public const int Obstacle = 7;
-        public const int Misile = 11;
     }
 
 

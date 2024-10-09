@@ -29,7 +29,7 @@ public class Turret : Enemy
     {
         Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
+        transform.rotation = Quaternion.AngleAxis(-angle+90, Vector3.up);
     }
 
     void disparo()

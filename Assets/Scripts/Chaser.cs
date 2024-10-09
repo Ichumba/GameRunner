@@ -14,10 +14,10 @@ public class Chaser : Enemy
 
         Vector3 direction = player.position - transform.position;
         float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(angle, Vector3.up);
+        transform.rotation = Quaternion.AngleAxis(-angle+90f, Vector3.up);
 
         Quaternion rotation = Quaternion.Euler(0f, rb.rotation.y, 0f);
-        rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * (Vector3)(rotation * direction));
+        rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * (Vector3)(rotation * transform.forward));
     }
 
     private void OnTriggerEnter(Collider col)
