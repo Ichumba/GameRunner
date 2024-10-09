@@ -3,15 +3,16 @@ using UnityEngine;
 
 public class SpeedBoost : MonoBehaviour
 {
-    public float boostAmount = 5f;
-    public float duration = 5f;
+    public float boostAmount = 5f;  
+    public float duration = 5f;    
 
     void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("Power-Up recogido!");
-            Movement3D player = other.GetComponent<Movement3D>();
+            Debug.Log("SpeedBoost recogido!");
+
+            AnimationPlayer player = other.GetComponent<AnimationPlayer>();
             if (player != null)
             {
                 ApplyEffect(player);
@@ -19,16 +20,16 @@ public class SpeedBoost : MonoBehaviour
         }
     }
 
-    public void ApplyEffect(Movement3D player)
+    public void ApplyEffect(AnimationPlayer player)
     {
-        player.speed += boostAmount; 
-        StartCoroutine(RemoveEffect(player));
+        player._movSpeed += boostAmount; 
+        StartCoroutine(RemoveEffect(player));  
     }
 
-    private IEnumerator RemoveEffect(Movement3D player)
+    private IEnumerator RemoveEffect(AnimationPlayer player)
     {
-        yield return new WaitForSeconds(duration); 
-        player.speed -= boostAmount; 
-        Destroy(gameObject); 
+        yield return new WaitForSeconds(duration);   
+        player._movSpeed -= boostAmount;  
+        Destroy(gameObject);  
     }
 }
