@@ -22,7 +22,7 @@ public class HealthBoost : MonoBehaviour
 
     public void ApplyEffect(PlayerFPS playerHealth)
     {
-        playerHealth.IncreaseHealth(healthAmount);  
+        //playerHealth.IncreaseHealth(healthAmount);  
         Destroy(gameObject);   
     }
 }

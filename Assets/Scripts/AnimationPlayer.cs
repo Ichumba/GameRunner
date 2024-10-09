@@ -6,7 +6,7 @@ using UnityEngine;
 public class AnimationPlayer : MonoBehaviour
 {
     
-    [SerializeField] private float _movSpeed = 5f;
+    [SerializeField] public float _movSpeed = 5f;
     private float _xAxis, _zAxis;
     [SerializeField] private float _JumpForce = 5f;
     [SerializeField] private float _jumpRayD = .25f;

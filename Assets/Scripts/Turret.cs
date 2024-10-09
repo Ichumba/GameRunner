@@ -6,7 +6,7 @@ public class Turret : Enemy
 {
     private float delay;
     [SerializeField] float shoot;
-    private Bullet bala;
+    [SerializeField] private Bullet bala;
 
 
     private void Start()
@@ -34,8 +34,9 @@ public class Turret : Enemy
 
     void disparo()
     {
-        Bullet bullet =Instantiate(bala, transform.position, transform.rotation);
+        Bullet bullet =Instantiate(bala, transform.position, transform.rotation* Quaternion.Euler(90f, 0f, 0f));
         bala.damage = Damage;
+        bala.Jugador = Jugador;
         delay = shoot;
     }
 
