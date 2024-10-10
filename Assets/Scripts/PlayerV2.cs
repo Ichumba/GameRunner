@@ -15,9 +15,13 @@ public class PlayerFPS : MonoBehaviour
         BarraVida.fillAmount = _life / 100;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int damage)
     {
-
+        _life -= damage;
+        if (_life < 0)
+        {
+            Destroy(gameObject, 0.3f);
+        }
     }
 
 

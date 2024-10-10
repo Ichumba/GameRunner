@@ -21,13 +21,13 @@ public class Bullet : MonoBehaviour
         
     }
 
-    private void OnTriggerEnter(Collider col)
+    private  void OnTriggerEnter(Collider col)
     {
-
+        //Por alguna razon al colisionar al player no detecta la ref a su clase apesar que en el codigo no salta ningun error
         if (col.gameObject.layer == Layer.Player)
         {
             print("Direct impact");
-            PJ._life -= damage;
+            PJ.TakeDamage (damage);
             Destroy(gameObject);
         }
         else

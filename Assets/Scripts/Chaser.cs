@@ -7,6 +7,7 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 public class Chaser : Enemy
 {
     [SerializeField] private float speed;
+    public Animator _animator;
 
     // Update is called once per framea
     void FixedUpdate()
@@ -18,14 +19,17 @@ public class Chaser : Enemy
 
         Quaternion rotation = Quaternion.Euler(0f, rb.rotation.y, 0f);
         rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * (Vector3)(rotation * transform.forward));
+       //
     }
 
-    private void OnTriggerEnter(Collider col)
+    private void OnCollisionEnter(Collision col)
     {
 
         if (col.gameObject.layer == Layer.Player)
         {
-            Jugador._life -= Damage;
+            print("toco");
+
+            Jugador.TakeDamage(Damage);
         }
 
 
