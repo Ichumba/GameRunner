@@ -9,7 +9,8 @@ public class Chaser : Enemy
     [SerializeField] private float speed;
     public Animator _animator;
 
-    // Update is called once per framea
+
+
     void FixedUpdate()
     {
 

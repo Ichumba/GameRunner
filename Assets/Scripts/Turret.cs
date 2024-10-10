@@ -9,7 +9,7 @@ public class Turret : Enemy
     [SerializeField] private Bullet bala;
 
 
-    private void Start()
+    private void Awake()
     {
         delay = shoot;
     }
@@ -20,7 +20,7 @@ public class Turret : Enemy
 
         if (delay <= 0)
         {
-            disparo();
+            Disparo();
         }
 
     }
@@ -32,11 +32,11 @@ public class Turret : Enemy
         transform.rotation = Quaternion.AngleAxis(-angle+90, Vector3.up);
     }
 
-    void disparo()
+    void Disparo()
     {
-        Bullet bullet =Instantiate(bala, transform.position, transform.rotation* Quaternion.Euler(90f, 0f, 0f));
-        bullet.damage = Damage;
-        bullet.PJ = Jugador;
+        Bullet Proyectile = Instantiate(bala, transform.position, transform.rotation* Quaternion.Euler(90f, 0f, 0f));
+        Proyectile.damage = Damage;
+        Proyectile.PJ = Jugador;
         delay = shoot;
     }
 

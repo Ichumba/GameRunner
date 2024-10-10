@@ -15,12 +15,6 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
     private  void OnTriggerEnter(Collider col)
     {
         //Por alguna razon al colisionar al player no detecta la ref a su clase apesar que en el codigo no salta ningun error

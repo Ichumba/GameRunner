@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     [SerializeField] protected int Damage;
     [SerializeField] protected Transform player;
     protected WeaponPlayer Arma;
-    protected PlayerFPS Jugador;
+    [SerializeField] protected PlayerFPS Jugador;
     protected Rigidbody rb;
 
     void Start()
