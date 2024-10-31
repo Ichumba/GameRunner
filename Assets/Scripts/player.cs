@@ -13,10 +13,12 @@ public class Player : Entity
     private Rigidbody _PlayerRB;
     ControlManager _controls;
     MovementPlayer _movementPlayer;
-
+    
     char[] caracteres;
     private void Start()
     {
+        
+       
         Yo = GetComponent<Transform>();
         _PlayerRB = GetComponent<Rigidbody>();
         _movementPlayer = new MovementPlayer(Yo, speed);

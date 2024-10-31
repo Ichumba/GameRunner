@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Animations;
 using UnityEngine.UIElements;
 
 public class MovePlayer : MonoBehaviour
@@ -10,11 +11,14 @@ public class MovePlayer : MonoBehaviour
     public Rigidbody _rb;
      private float _zAxis;
     private float _xAxis;
-    
+    //Transform _cameraTransform;
     private Vector3 _dir;
+
+    
     [SerializeField] private float _speed;
     private void Awake()
     {
+      //  _cameraTransform = GetComponentInChildren<Camera>().transform;
         _rb = GetComponent<Rigidbody>();
     }
     void Start()
@@ -28,7 +32,9 @@ public class MovePlayer : MonoBehaviour
         _xAxis = Input.GetAxis("Horizontal");
         _zAxis = Input.GetAxis("Vertical");
 
-        
+        Vector3 FowardDirection = transform.forward * _xAxis;
+        Vector3 rightDirection =  transform.right * _zAxis;
+
 
         if (_zAxis != 0 || _xAxis != 0)
         {
