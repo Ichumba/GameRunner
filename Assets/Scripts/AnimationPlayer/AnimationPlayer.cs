@@ -8,9 +8,7 @@ public class AnimationPlayer : MonoBehaviour
     
     [SerializeField] public float _movSpeed = 5f;
     private float _xAxis, _zAxis;
-    [SerializeField] private float _JumpForce = 5f;
-    [SerializeField] private float _jumpRayD = .25f;
-    [SerializeField] private float _movRayD = 1f;
+    
     [Header("Animator")]
     [SerializeField] private string _xAxisName = "xAxis";
     [SerializeField] private string _zAxisName = "zAxis";
@@ -18,11 +16,7 @@ public class AnimationPlayer : MonoBehaviour
     private Animator animator;
     private Rigidbody _rb;
 
-    [Header("Physx")]
-    [SerializeField] private LayerMask _jumpMask;
-    [SerializeField] private LayerMask _movMask;
-    [SerializeField] private Vector3 _rayPoffset = new Vector3(0 , 0.75f , 0);
-    private Ray _jumpRay, _MovRay;
+   
     private void Awake()
     {
         _rb = GetComponent<Rigidbody>();
@@ -46,17 +40,14 @@ public class AnimationPlayer : MonoBehaviour
         {
             animator.SetTrigger(_OnAttack);
         }
-        if (Input.GetKeyDown(KeyCode.Space) && CanJump())
+        if (Input.GetKeyDown(KeyCode.Space))
         {
-            Jump();
+            
         }
 
         
     }
-    private void Jump()
-    {
-        _rb.AddForce(transform.up * _JumpForce,ForceMode.Impulse);
-    }
+    
     private void FixedUpdate()
     {
         if (_xAxis != 0 || _zAxis != 0)
@@ -74,15 +65,5 @@ public class AnimationPlayer : MonoBehaviour
     {
         //print(gameObject.name + " Ataco");
     }
-    private bool CanJump()
-    {
-        _jumpRay = new Ray(transform.position + _rayPoffset , -transform.up);
-        return Physics.Raycast(_jumpRay, _jumpRayD, _jumpMask);
-    }
-    private void OnDrawGizmos()
-    {
-        if (CanJump()) Gizmos.color = Color.green;
-        else Gizmos.color = Color.red;
-        Gizmos.DrawRay(_jumpRay.origin, _jumpRay.direction * _jumpRayD);
-    }
+    
 }
