@@ -12,7 +12,7 @@ public class PlayerFPS : MonoBehaviour
 
     private void Update()
     {
-        BarraVida.fillAmount = _life / 100;
+       // BarraVida.fillAmount = _life / 100;
     }
 
     public void TakeDamage(int damage)

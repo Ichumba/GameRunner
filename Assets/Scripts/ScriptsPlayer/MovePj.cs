@@ -6,7 +6,7 @@ using UnityEngine.UIElements;
 public class MovePj : MonoBehaviour
 {
     [SerializeField]
-    float _speed;
+    public float _speed;
     bool _isGround = false;
     [SerializeField] private float _JumpForce = 5f;
 

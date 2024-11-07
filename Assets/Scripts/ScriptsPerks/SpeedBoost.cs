@@ -12,7 +12,7 @@ public class SpeedBoost : MonoBehaviour
         {
             Debug.Log("SpeedBoost recogido!");
 
-            AnimationPlayer player = other.GetComponent<AnimationPlayer>();
+            MovePj player = other.GetComponent<MovePj>();
             if (player != null)
             {
                 ApplyEffect(player);
@@ -20,16 +20,16 @@ public class SpeedBoost : MonoBehaviour
         }
     }
 
-    public void ApplyEffect(AnimationPlayer player)
+    public void ApplyEffect(MovePj player)
     {
-        player._movSpeed += boostAmount; 
+        player._speed += boostAmount; 
         StartCoroutine(RemoveEffect(player));  
     }
 
-    private IEnumerator RemoveEffect(AnimationPlayer player)
+    private IEnumerator RemoveEffect(MovePj player)
     {
         yield return new WaitForSeconds(duration);   
-        player._movSpeed -= boostAmount;  
+        player._speed -= boostAmount;  
         Destroy(gameObject);  
     }
 }

@@ -17,7 +17,7 @@ public class PlataformaMovil : MonoBehaviour
     private void Andar()
     {
         if (waypoint.Length <= 0) return;
-        if (Vector2.Distance(transform.position, waypoint[actualWaypoint].position) <= 0.1)
+        if (Vector3.Distance(transform.position, waypoint[actualWaypoint].position) <= 0.1)
         {
             actualWaypoint++;
         }
