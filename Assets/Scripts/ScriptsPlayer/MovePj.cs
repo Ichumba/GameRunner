@@ -9,7 +9,7 @@ public class MovePj : MonoBehaviour
     public float _speed;
     bool _isGround = false;
     [SerializeField] private float _JumpForce = 5f;
-
+    [SerializeField]CameraMov _cameraMov;
     Vector3 _direction;
     Transform _cameraTransform;
     Rigidbody _rigidbody;
@@ -71,14 +71,17 @@ public class MovePj : MonoBehaviour
 
     void CameraRot()
     {
+
         _rotate.x += Input.GetAxisRaw("Mouse X") * sensitivity;
-       
+        _rotate.y = Input.GetAxisRaw("Mouse Y");
 
         if (Mathf.Abs(_rotate.x) >= 360)
         {
             _rotate.x -= 360 * Mathf.Sign(_rotate.x);
         } 
         transform.localRotation = Quaternion.Euler(0, _rotate.x, 0);
+        _cameraMov.MovCamera(_rotate.y);
+        
     }
 
     private void FixedUpdate()

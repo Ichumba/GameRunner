@@ -11,11 +11,11 @@ public class CameraMov : MonoBehaviour
     [SerializeField] float minVerRotation;
     [SerializeField] float maxVerRotation;
 
-
     
-    void Update()
+    
+    
+    public void MovCamera(float vertical)
     {
-
         angle -= Input.GetAxis("Mouse Y") * rotationSens;
         transform.eulerAngles = new Vector3(angle, transform.eulerAngles.y, transform.eulerAngles.z);
         angle = Mathf.Clamp(angle, minVerRotation, maxVerRotation);
