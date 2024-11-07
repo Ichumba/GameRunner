@@ -3,8 +3,8 @@ using UnityEngine;
 
 public class SpeedBoost : MonoBehaviour
 {
-    public float boostAmount = 5f;  
-    public float duration = 5f;    
+    public float boostAmount = 5f;
+    public float duration = 5f;
 
     void OnTriggerEnter(Collider other)
     {
@@ -22,14 +22,14 @@ public class SpeedBoost : MonoBehaviour
 
     public void ApplyEffect(MovePj player)
     {
-        player._speed += boostAmount; 
-        StartCoroutine(RemoveEffect(player));  
+        player._speed += boostAmount;
+        StartCoroutine(RemoveEffect(player));
     }
 
     private IEnumerator RemoveEffect(MovePj player)
     {
-        yield return new WaitForSeconds(duration);   
-        player._speed -= boostAmount;  
-        Destroy(gameObject);  
+        yield return new WaitForSeconds(duration);
+        player._speed -= boostAmount;
+        Destroy(gameObject);
     }
 }

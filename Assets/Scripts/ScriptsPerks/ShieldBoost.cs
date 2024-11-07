@@ -11,7 +11,7 @@ public class ShieldBoost : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("SpeedBoost recogido!");
+            Debug.Log("ShieldBoost recogido!");
 
             AnimationPlayer player = other.GetComponent<AnimationPlayer>();
             if (player != null)
@@ -19,7 +19,7 @@ public class ShieldBoost : MonoBehaviour
                 ApplyEffect(player);
             }
 
-            Destroy(gameObject);
+            Destroy(gameObject);  
         }
     }
 
@@ -33,18 +33,11 @@ public class ShieldBoost : MonoBehaviour
         if (shield != null)
         {
             shield.SetStrength(100f);
-            shield.ActivateShield();
+            shield.ActivateShield(duration); 
         }
 
         shieldInstance.transform.localPosition = new Vector3(0, 0.5f, 0);
         shieldInstance.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
-
-        StartCoroutine(RemoveEffect(shieldInstance));
-    }
-
-    private IEnumerator RemoveEffect(GameObject shield)
-    {
-        yield return new WaitForSeconds(duration);
-        Destroy(shield);
     }
 }
+

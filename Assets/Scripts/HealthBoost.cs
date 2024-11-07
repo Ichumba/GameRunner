@@ -15,14 +15,15 @@ public class HealthBoost : MonoBehaviour
             PlayerFPS playerHealth = other.GetComponent<PlayerFPS>();
             if (playerHealth != null)
             {
-                ApplyEffect(playerHealth);
+                ApplyEffect(playerHealth);  
             }
+
+            Destroy(gameObject);   
         }
     }
 
     public void ApplyEffect(PlayerFPS playerHealth)
     {
-        //playerHealth.IncreaseHealth(healthAmount);  
-        Destroy(gameObject);   
+        playerHealth.IncreaseHealth(healthAmount);   
     }
 }

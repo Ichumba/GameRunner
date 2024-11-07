@@ -1,15 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UIElements;
 
 public class MovePj : MonoBehaviour
 {
     [SerializeField]
-    public float _speed;
+    public float _speed = 5f;
     bool _isGround = false;
     [SerializeField] private float _JumpForce = 5f;
-    [SerializeField]CameraMov _cameraMov;
+    [SerializeField] CameraMov _cameraMov;
     Vector3 _direction;
     Transform _cameraTransform;
     Rigidbody _rigidbody;
@@ -19,32 +18,33 @@ public class MovePj : MonoBehaviour
     bool _CanJump;
 
     [SerializeField] LayerMask _groudCheckLayer;
-   
+
     [Header("")]
     [SerializeField] Transform _feet;
     [SerializeField] float _groundDetecRadius = 0.1f;
-
 
     public Vector3 _rotate;
     public float sensitivity = .5f;
 
     Vector3 _cameraForward2D;
-    void Awake()
+    private bool _isBoosting = false;
+
+    private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
         _capsuleCollider = GetComponent<CapsuleCollider>();
         _cameraTransform = GetComponentInChildren<Camera>().transform;
     }
-    void Start()
+
+    private void Start()
     {
-        
     }
+
     private void Jump()
     {
         _rigidbody.AddForce(transform.up * _JumpForce, ForceMode.Impulse);
     }
 
-    // Update is called once per frame
     void Update()
     {
         CameraRot();
@@ -59,10 +59,7 @@ public class MovePj : MonoBehaviour
 
         _direction = forwardDirection + rightDirection;
         _direction.Normalize();
-       // if (Input.GetKeyDown(KeyCode.Space))
-        //{
-         //   Jump();
-        //}
+
         if (!_CanJump)
         {
             _CanJump = Input.GetKeyDown(KeyCode.Space);
@@ -71,17 +68,15 @@ public class MovePj : MonoBehaviour
 
     void CameraRot()
     {
-
         _rotate.x += Input.GetAxisRaw("Mouse X") * sensitivity;
         _rotate.y = Input.GetAxisRaw("Mouse Y");
 
         if (Mathf.Abs(_rotate.x) >= 360)
         {
             _rotate.x -= 360 * Mathf.Sign(_rotate.x);
-        } 
+        }
         transform.localRotation = Quaternion.Euler(0, _rotate.x, 0);
         _cameraMov.MovCamera(_rotate.y);
-        
     }
 
     private void FixedUpdate()
@@ -93,11 +88,15 @@ public class MovePj : MonoBehaviour
             Jump();
             _CanJump = false;
         }
+
+        Vector3 movement = _direction * _speed * Time.fixedDeltaTime;
+        _rigidbody.MovePosition(_rigidbody.position + movement);
     }
+
     private void OnDrawGizmos()
     {
         Gizmos.color = _isGround ? Color.green : Color.red;
         if (_feet)
-        Gizmos.DrawSphere(_feet.position, _groundDetecRadius);
+            Gizmos.DrawSphere(_feet.position, _groundDetecRadius);
     }
 }
