@@ -11,9 +11,13 @@ public class CameraMov : MonoBehaviour
     [SerializeField] float minVerRotation;
     [SerializeField] float maxVerRotation;
 
-    
-    
-    
+    /*void Start()
+    {
+        UnityEngine.Cursor.lockState = CursorLockMode.Locked;
+        UnityEngine.Cursor.visible = false;
+    }*/
+
+
     public void MovCamera(float vertical)
     {
         angle -= Input.GetAxis("Mouse Y") * rotationSens;

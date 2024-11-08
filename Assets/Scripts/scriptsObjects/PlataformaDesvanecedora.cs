@@ -4,60 +4,56 @@ using UnityEngine;
 
 public class PlataformaDesvanecedora : MonoBehaviour
 {
-
-    [SerializeField] private float delay;
+    private Coroutine Vanished;
     [SerializeField] private float durability;
-    private bool vanished = false;
-    private bool Visible = true;
     [SerializeField] private Transform child;
+    private Renderer Renderer;
+    private Collider Collider;
 
-    void Start()
+
+    private void Start()
     {
-        delay = durability;
+        Vanished = StartCoroutine(Vanish());
+        Renderer = child.GetComponent<Renderer>();
+        Collider = child.GetComponent<Collider>();
     }
 
-    // Update is called once per frame
     void Update()
     {
 
-        if (delay <= 0)
-        {
-            Toggle();
-            delay = durability;
-        }
-
-
-        if (vanished == true)
-        {
-            delay -= Time.deltaTime;
-        }
 
     }
 
-    private void OnTriggerStay(Collider col)
+    private void OnTriggerEnter(Collider col)
     {
-
-        if (col.gameObject.layer == Layer.Player && vanished == false)
+        if (col.gameObject.layer == Layer.Player)
         {
-            
-            delay -= Time.deltaTime;
+            StartCoroutine(Vanish());
         }
-
     }
+
 
     private void OnTriggerExit(Collider col)
     {
-        if (col.gameObject.layer == Layer.Player && vanished == false)
+        if (col.gameObject.layer == Layer.Player)
         {
-            delay = durability;
+           StopCoroutine(Vanished);
         }
     }
-
-    void Toggle()
+    
+    IEnumerator Vanish()
     {
-        vanished = !vanished;
-        Visible = !Visible;
-        child.gameObject.SetActive(Visible);
+        yield return new WaitForSeconds(durability);
+        StartCoroutine(Respawn());
+        Renderer.enabled = false;
+        Collider.enabled = false;
+    }
+
+    IEnumerator Respawn()
+    {
+        yield return new WaitForSeconds(durability);
+        Renderer.enabled = true;
+        Collider.enabled = true;
     }
 
     private class Layer

@@ -11,6 +11,14 @@ public class Chaser : Enemy
 
 
 
+    private void Update()
+    {
+        if (player == null)
+        {
+            Destroy(this);
+        }
+    }
+
     void FixedUpdate()
     {
 
@@ -20,7 +28,7 @@ public class Chaser : Enemy
 
         Quaternion rotation = Quaternion.Euler(0f, rb.rotation.y, 0f);
         rb.MovePosition(rb.position + speed * Time.fixedDeltaTime * (Vector3)(rotation * transform.forward));
-       //
+       
     }
 
     private void OnCollisionEnter(Collision col)
@@ -32,7 +40,6 @@ public class Chaser : Enemy
 
             Jugador.TakeDamage(Damage);
         }
-
 
     }
 

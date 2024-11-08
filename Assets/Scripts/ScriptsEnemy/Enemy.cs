@@ -4,11 +4,20 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour
 {
-    [SerializeField] protected int Life;
-    [SerializeField] protected int Damage;
-    [SerializeField] protected Transform player;
+    [SerializeField] 
+    protected int Life;
+
+    [SerializeField] 
+    protected int Damage;
+
+    [SerializeField] 
+    protected Transform player;
+
+    [SerializeField] 
+    protected PlayerFPS Jugador;
+
     protected WeaponPlayer Arma;
-    [SerializeField] protected PlayerFPS Jugador;
+    
     protected Rigidbody rb;
 
     void Start()
@@ -26,7 +35,6 @@ public class Enemy : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
     }
 
     protected class Layer

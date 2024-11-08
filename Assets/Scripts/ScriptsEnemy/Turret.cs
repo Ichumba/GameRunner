@@ -4,25 +4,25 @@ using UnityEngine;
 
 public class Turret : Enemy
 {
-    private float delay;
     [SerializeField] float shoot;
     [SerializeField] private Bullet bala;
 
+    private bool disparado = false;
 
-    private void Awake()
-    {
-        delay = shoot;
-    }
+
 
     void Update()
     {
-        delay -= Time.deltaTime;
-
-        if (delay <= 0)
+        if (disparado == false )
         {
-            Disparo();
+            StartCoroutine(Disparo(shoot));
         }
 
+
+        if (player == null)
+        {
+            Destroy(this);
+        }
     }
 
     private void FixedUpdate()
@@ -32,12 +32,14 @@ public class Turret : Enemy
         transform.rotation = Quaternion.AngleAxis(-angle+90, Vector3.up);
     }
 
-    void Disparo()
+    IEnumerator Disparo(float Shot)
     {
+        disparado = true;
+        yield return new WaitForSeconds(Shot);
         Bullet Proyectile = Instantiate(bala, transform.position, transform.rotation* Quaternion.Euler(90f, 0f, 0f));
         Proyectile.damage = Damage;
         Proyectile.PJ = Jugador;
-        delay = shoot;
+        disparado = false;
     }
 
 
