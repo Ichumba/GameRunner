@@ -2,6 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public class Layer
+{
+    public const int Player = 6;
+    public const int OutOfBounds = 9;
+}
 public class Enemy : MonoBehaviour
 {
     [SerializeField] 
@@ -37,11 +42,7 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    protected class Layer
-    {
-        public const int Player = 6;
-        public const int OutOfBounds = 9;
-    }
+    
 
 
 }
