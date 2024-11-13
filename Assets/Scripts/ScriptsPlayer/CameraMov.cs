@@ -11,11 +11,11 @@ public class CameraMov : MonoBehaviour
     [SerializeField] float minVerRotation;
     [SerializeField] float maxVerRotation;
 
-    /*void Start()
+    void Start()
     {
         UnityEngine.Cursor.lockState = CursorLockMode.Locked;
         UnityEngine.Cursor.visible = false;
-    }*/
+    }
 
 
     public void MovCamera(float vertical)

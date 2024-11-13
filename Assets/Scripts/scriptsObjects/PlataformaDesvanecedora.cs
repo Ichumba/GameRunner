@@ -9,11 +9,11 @@ public class PlataformaDesvanecedora : MonoBehaviour
     [SerializeField] private Transform child;
     private Renderer Renderer;
     private Collider Collider;
-
+    public bool prueba = false;
 
     private void Start()
     {
-        Vanished = StartCoroutine(Vanish());
+       // Vanished = StartCoroutine(Vanish());
         Renderer = child.GetComponent<Renderer>();
         Collider = child.GetComponent<Collider>();
     }
@@ -29,20 +29,23 @@ public class PlataformaDesvanecedora : MonoBehaviour
         if (col.gameObject.layer == Layer.Player)
         {
             StartCoroutine(Vanish());
+            
         }
     }
 
 
-    private void OnTriggerExit(Collider col)
+   /* private void OnTriggerExit(Collider col)
     {
         if (col.gameObject.layer == Layer.Player)
         {
            StopCoroutine(Vanished);
+            prueba = false;
         }
     }
-    
+    */
     IEnumerator Vanish()
     {
+        prueba = true;
         yield return new WaitForSeconds(durability);
         StartCoroutine(Respawn());
         Renderer.enabled = false;
@@ -51,6 +54,7 @@ public class PlataformaDesvanecedora : MonoBehaviour
 
     IEnumerator Respawn()
     {
+
         yield return new WaitForSeconds(durability);
         Renderer.enabled = true;
         Collider.enabled = true;
