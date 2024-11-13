@@ -10,6 +10,11 @@ public class Chaser : Enemy
     public Animator _animator;
 
 
+    private void Start()
+    {
+        _animator = GetComponentInChildren<Animator>();
+        _animator.SetBool("Run", true);
+    }
 
     private void Update()
     {

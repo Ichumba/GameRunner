@@ -10856,6 +10856,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 944267351}
+    - target: {fileID: 6880400946890880823, guid: 85fa541f3601e834dbff4b160a2d805e, type: 3}
+      propertyPath: Jugador
+      value: 
+      objectReference: {fileID: 1381825767}
     - target: {fileID: 7494596171663581503, guid: 85fa541f3601e834dbff4b160a2d805e, type: 3}
       propertyPath: m_Name
       value: Enemys
