@@ -10,7 +10,7 @@ public class Chaser : Enemy
     public Animator _animator;
 
 
-    private void Start()
+    private void Awake()
     {
         _animator = GetComponentInChildren<Animator>();
         _animator.SetBool("Run", true);
