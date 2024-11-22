@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class PlayerFPS : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerFPS : MonoBehaviour
     [SerializeField] private float _maxLife;
     [SerializeField] private float _shield;
     [SerializeField] private Image BarraVida;
+    public UnityEvent death;
 
     private void Start()
     {
@@ -63,6 +65,7 @@ public class PlayerFPS : MonoBehaviour
 
         if (_life <= 0)
         {
+            death.Invoke();
             Destroy(gameObject, 0.3f);
         }
     }
