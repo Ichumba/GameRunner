@@ -30,4 +30,29 @@ public class PlataformaMovil : MonoBehaviour
         Vector3 movement = Vector3.MoveTowards(transform.position, waypoint[actualWaypoint].position, speed * Time.deltaTime);
         transform.position = movement;
     }
+
+
+    private void OnCollisionEnter(Collision col)
+    {
+        if (col.gameObject.layer == Layer.Player)
+        {
+            col.transform.parent = this.transform;
+
+        }
+    }
+
+
+    private void OnCollisionExit(Collision col)
+    {
+        if (col.gameObject.layer == Layer.Player)
+        {
+            col.transform.parent = null;
+
+        }
+    }
+
+    private class Layer
+    {
+        public const int Player = 6;
+    }
 }
