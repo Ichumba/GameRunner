@@ -7,7 +7,7 @@ public class Layer
     public const int Player = 6;
     public const int OutOfBounds = 9;
 }
-public class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour
 {
     // Tomas Gomez
 
