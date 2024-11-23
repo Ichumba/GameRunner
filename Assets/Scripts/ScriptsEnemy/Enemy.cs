@@ -9,6 +9,8 @@ public class Layer
 }
 public class Enemy : MonoBehaviour
 {
+    // Tomas Gomez
+
     [SerializeField] 
     protected int Life;
 
@@ -24,6 +26,8 @@ public class Enemy : MonoBehaviour
     protected WeaponPlayer Arma;
     
     protected Rigidbody rb;
+
+    
 
     void Start()
     {

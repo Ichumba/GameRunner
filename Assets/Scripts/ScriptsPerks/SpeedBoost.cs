@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class SpeedBoost : MonoBehaviour
 {
+    // Maria Garat
     public float boostAmount = 5f;
     public float duration = 5f;
 

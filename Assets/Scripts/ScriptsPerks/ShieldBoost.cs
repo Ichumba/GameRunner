@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ShieldBoost : MonoBehaviour
 {
+    // Maria Garat
     public GameObject shieldPrefab;
     public float duration = 5f;
 
