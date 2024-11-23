@@ -5,6 +5,7 @@ using UnityEngine;
 
 public class AnimationPlayer : MonoBehaviour
 {
+    //ignacio chumba
     
     [SerializeField] public float _movSpeed = 5f;
     private float _xAxis, _zAxis;

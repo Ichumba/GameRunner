@@ -6,6 +6,7 @@ using UnityEngine.UIElements;
 
 public class CameraMov : MonoBehaviour
 {
+    //Ignacio Chumba
     [SerializeField] float rotationSens;
     float angle;
     [SerializeField] float minVerRotation;

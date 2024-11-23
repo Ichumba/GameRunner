@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class MovePj : MonoBehaviour
 {
+    //Ignacio Chumba
     [SerializeField]
     public float _speed = 5f;
     bool _isGround = false;

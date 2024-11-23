@@ -13767,6 +13767,11 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!95 &1097940575 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 7587256556097332424, guid: 85fa541f3601e834dbff4b160a2d805e, type: 3}
+  m_PrefabInstance: {fileID: 1692417834}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1124604222
 GameObject:
   m_ObjectHideFlags: 0
@@ -18789,6 +18794,10 @@ PrefabInstance:
       propertyPath: Jugador
       value: 
       objectReference: {fileID: 1376903085}
+    - target: {fileID: 6880400946890880823, guid: 85fa541f3601e834dbff4b160a2d805e, type: 3}
+      propertyPath: _animator
+      value: 
+      objectReference: {fileID: 1097940575}
     - target: {fileID: 7494596171663581503, guid: 85fa541f3601e834dbff4b160a2d805e, type: 3}
       propertyPath: m_Name
       value: Enemys

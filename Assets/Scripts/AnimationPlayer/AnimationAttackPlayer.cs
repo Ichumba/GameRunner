@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class AnimationAttackPlayer : MonoBehaviour
 {
+    //Ignacio Chumba
     private Animator animator;
     [SerializeField] private string _OnAttack = "OnAttack";
     void Start()
