@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PlataformaDesvanecedora : MonoBehaviour
 {
+    // Tomas Gomez
     private Coroutine Vanished;
     [SerializeField] private float durability;
     [SerializeField] private Transform child;

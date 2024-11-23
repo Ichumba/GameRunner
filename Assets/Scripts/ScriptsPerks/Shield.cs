@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Shield : MonoBehaviour
 {
+    // Maria Garat
     private float strength;
     private bool isActive = false;
     private float shieldDuration;
