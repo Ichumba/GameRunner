@@ -5,6 +5,8 @@ using UnityEngine;
 public class Layer
 {
     public const int Player = 6;
+    public const int Floor = 7;
+    public const int Pared = 8;
     public const int OutOfBounds = 9;
 }
 public abstract class Enemy : MonoBehaviour

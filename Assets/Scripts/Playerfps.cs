@@ -10,13 +10,14 @@ public class PlayerFPS : MonoBehaviour
     [SerializeField] private float _maxLife;
     [SerializeField] private float _shield;
     [SerializeField] private Image BarraVida;
+    private Vector3 Inicio;
     public UnityEvent death;
 
     private void Start()
     {
         _life = Mathf.Min(_life, _maxLife);
         _shield = 0;
-
+        Inicio = transform.position;
         UpdateHealthBar();
     }
 
@@ -77,4 +78,14 @@ public class PlayerFPS : MonoBehaviour
             BarraVida.fillAmount = _life / _maxLife;
         }
     }
+
+    private void OnTriggerEnter(Collider col)
+    {
+        if (col.gameObject.layer == Layer.OutOfBounds)
+        {
+            transform.position = Inicio;
+            _life -= 10;
+        }
+    }
+
 }
