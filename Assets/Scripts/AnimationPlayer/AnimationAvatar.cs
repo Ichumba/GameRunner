@@ -15,5 +15,8 @@ public class AnimationAvatar : MonoBehaviour
     {
         playerAvatar.OnAttack();
     }
-    
+    public void OnStep()
+    {
+        playerAvatar.PlaysSFX();
+    }
 }

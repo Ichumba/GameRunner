@@ -5,17 +5,22 @@ using UnityEngine;
 
 public class AnimationPlayer : MonoBehaviour
 {
-    //ignacio chumba
+    
     
     [SerializeField] public float _movSpeed = 5f;
     private float _xAxis, _zAxis;
-    
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip[] _stepClips;
+
     [Header("Animator")]
     [SerializeField] private string _xAxisName = "xAxis";
     [SerializeField] private string _zAxisName = "zAxis";
     [SerializeField] private string _OnAttack = "OnAttack";
     private Animator animator;
     private Rigidbody _rb;
+    private AudioSource _source;
+    private AudioClip _selectClip;
 
    
     private void Awake()
@@ -27,6 +32,7 @@ public class AnimationPlayer : MonoBehaviour
     {
         _rb.constraints = RigidbodyConstraints.FreezeRotation;
         animator = GetComponentInChildren<Animator>();
+        _source = GetComponent<AudioSource>();
     }
 
     // Update is called once per frame
@@ -66,5 +72,17 @@ public class AnimationPlayer : MonoBehaviour
     {
         //print(gameObject.name + " Ataco");
     }
-    
+    public void PlaysSFX()
+    {
+        AudioClip newClip = _stepClips[Random.Range(0, _stepClips.Length)];
+        while (newClip == _selectClip)
+        {
+            newClip = _stepClips[Random.Range(0, _stepClips.Length)];
+        }
+        _selectClip = newClip;
+        _source.clip = _selectClip;
+        _source.Play();
+
+    }
+
 }
