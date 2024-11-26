@@ -9,7 +9,7 @@ public class Layer
     public const int Pared = 8;
     public const int OutOfBounds = 9;
 }
-public abstract class Enemy : MonoBehaviour
+public abstract class Enemy : MonoBehaviour, IDamage
 {
     // Tomas Gomez
 
@@ -38,9 +38,9 @@ public abstract class Enemy : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    void RecieveDamage()
+    public void TakeDamage(int damage)
     {
-        Life -= Arma.daño;
+        Life -= damage;
 
         if (Life <= 0)
         {

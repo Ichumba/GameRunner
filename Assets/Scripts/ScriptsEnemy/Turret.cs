@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Turret : Enemy
@@ -7,6 +8,8 @@ public class Turret : Enemy
     // Tomas Gomez
     [SerializeField] float shoot;
     [SerializeField] private Bullet bala;
+    [SerializeField] private float distancia = 20;
+    [SerializeField] private Transform ShootingPoint;
 
     private bool disparado = false;
 
@@ -14,7 +17,7 @@ public class Turret : Enemy
 
     void Update()
     {
-        if (disparado == false )
+        if (disparado == false && Vector3.Distance(transform.position, player.position) <= distancia)
         {
             StartCoroutine(Disparo(shoot));
         }
@@ -37,9 +40,8 @@ public class Turret : Enemy
     {
         disparado = true;
         yield return new WaitForSeconds(Shot);
-        Bullet Proyectile = Instantiate(bala, transform.position, transform.rotation* Quaternion.Euler(90f, 0f, 0f));
+        Bullet Proyectile = Instantiate(bala, ShootingPoint.position, transform.rotation* Quaternion.Euler(90f, 0f, 0f));
         Proyectile.damage = Damage;
-        Proyectile.PJ = Jugador;
         disparado = false;
     }
 

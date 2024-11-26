@@ -5,7 +5,6 @@ using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class Bullet : MonoBehaviour
 {
-    public PlayerFPS PJ;
     public int damage;
     [SerializeField] private float speed;
     private Rigidbody rb;
@@ -17,15 +16,14 @@ public class Bullet : MonoBehaviour
 
     private  void OnTriggerEnter(Collider col)
     {
-        //Por alguna razon al colisionar al player no detecta la ref a su clase apesar que en el codigo no salta ningun error
-        if (col.gameObject.layer == Layer.Player)
+        IDamage damages = col.GetComponent<IDamage>();
+
+        if (damages!=null)
         {
-            print("Direct impact");
-            PJ.TakeDamage (damage);
+            damages.TakeDamage(damage);
             Destroy(gameObject);
         }
         else
-        if (col.gameObject.layer == Layer.Pared)
         {
             Destroy(gameObject);
         }

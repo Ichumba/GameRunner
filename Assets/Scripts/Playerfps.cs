@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
-public class PlayerFPS : MonoBehaviour
+public class PlayerFPS : MonoBehaviour, IDamage
 {
     [SerializeField] private float _life;
     [SerializeField] private float _maxLife;

@@ -43,8 +43,6 @@ public class Chaser : Enemy
        
        
     }
-
-
     
     private void OnCollisionEnter(Collision col)
     {
