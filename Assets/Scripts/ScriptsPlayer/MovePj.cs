@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class MovePj : MonoBehaviour
 {
-    //Ignacio Chumba
+    
     [SerializeField]
     public float _speed = 5f;
     bool _isGround = false;
     [SerializeField] private float _JumpForce = 5f;
     [SerializeField] CameraMov _cameraMov;
     Vector3 _direction;
+
     Transform _cameraTransform;
     Rigidbody _rigidbody;
     CapsuleCollider _capsuleCollider;
