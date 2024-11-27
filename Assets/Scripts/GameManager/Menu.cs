@@ -8,7 +8,7 @@ public class Menu : MonoBehaviour
     // Tomas Gomez
     public void Play()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene("Nivel1");
     }
     public void MMenu()
     {
@@ -20,7 +20,7 @@ public class Menu : MonoBehaviour
     }
     public void Prototype()
     {
-        SceneManager.LoadScene("Prototype");
+        SceneManager.LoadScene("NewPrototype");
     }
     public void Exit()
     {
