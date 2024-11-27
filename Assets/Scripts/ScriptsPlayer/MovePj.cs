@@ -4,9 +4,8 @@ using UnityEngine;
 
 public class MovePj : MonoBehaviour
 {
-    
-    [SerializeField]
-    public float _speed = 5f;
+    [SerializeField] public float _speed = 5f;
+    private float _health = 100f;
     bool _isGround = false;
     [SerializeField] private float _JumpForce = 5f;
     [SerializeField] CameraMov _cameraMov;
@@ -15,8 +14,7 @@ public class MovePj : MonoBehaviour
     Transform _cameraTransform;
     Rigidbody _rigidbody;
     CapsuleCollider _capsuleCollider;
-    [SerializeField]
-    ForceMode _forceMode;
+    [SerializeField] ForceMode _forceMode;
     bool _CanJump;
 
     [SerializeField] LayerMask _groudCheckLayer;
@@ -38,9 +36,7 @@ public class MovePj : MonoBehaviour
         _cameraTransform = GetComponentInChildren<Camera>().transform;
     }
 
-    private void Start()
-    {
-    }
+    private void Start() { }
 
     private void Jump()
     {
@@ -100,5 +96,45 @@ public class MovePj : MonoBehaviour
         Gizmos.color = _isGround ? Color.green : Color.red;
         if (_feet)
             Gizmos.DrawSphere(_feet.position, _groundDetecRadius);
+    }
+
+    public void ApplyBoost(BoostType boostType, float value, float duration)
+    {
+        switch (boostType)
+        {
+            case BoostType.Speed:
+                ApplySpeedBoost(value, duration);
+                break;
+            case BoostType.Shield:
+                ApplyShield(value, duration);
+                break;
+            case BoostType.Health:
+                IncreaseHealth((int)value);
+                break;
+        }
+    }
+
+    private void ApplySpeedBoost(float amount, float duration)
+    {
+        _speed += amount;
+        StartCoroutine(RemoveSpeedBoost(amount, duration));
+    }
+
+    private IEnumerator RemoveSpeedBoost(float amount, float duration)
+    {
+        yield return new WaitForSeconds(duration);
+        _speed -= amount;
+    }
+
+    private void ApplyShield(float strength, float duration)
+    {
+         
+        Debug.Log($"Shield applied with strength {strength} for {duration} seconds.");
+    }
+
+    private void IncreaseHealth(int amount)
+    {
+        _health += amount;
+        Debug.Log($"Health increased by {amount}. Current health: {_health}");
     }
 }

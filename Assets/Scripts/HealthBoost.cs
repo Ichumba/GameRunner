@@ -1,10 +1,9 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class HealthBoost : MonoBehaviour
 {
-    public int healthAmount = 20;  
+    public int healthAmount = 20;
+    public float duration = 5f;
 
     void OnTriggerEnter(Collider other)
     {
@@ -12,18 +11,13 @@ public class HealthBoost : MonoBehaviour
         {
             Debug.Log("HealthBoost recogido!");
 
-            PlayerFPS playerHealth = other.GetComponent<PlayerFPS>();
-            if (playerHealth != null)
+            IBoostable player = other.GetComponent<IBoostable>();
+            if (player != null)
             {
-                ApplyEffect(playerHealth);  
+                player.ApplyBoost(BoostType.Health, healthAmount, duration);   
             }
 
-            Destroy(gameObject);   
+            Destroy(gameObject);
         }
-    }
-
-    public void ApplyEffect(PlayerFPS playerHealth)
-    {
-        playerHealth.IncreaseHealth(healthAmount);   
     }
 }

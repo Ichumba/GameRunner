@@ -1,9 +1,7 @@
-using System.Collections;
 using UnityEngine;
 
 public class SpeedBoost : MonoBehaviour
 {
-    // Maria Garat
     public float boostAmount = 5f;
     public float duration = 5f;
 
@@ -11,26 +9,12 @@ public class SpeedBoost : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("SpeedBoost recogido!");
-
-            MovePj player = other.GetComponent<MovePj>();
+            IBoostable player = other.GetComponent<IBoostable>();
             if (player != null)
             {
-                ApplyEffect(player);
+                player.ApplyBoost(BoostType.Speed, boostAmount, duration);
             }
+            Destroy(gameObject);
         }
-    }
-
-    public void ApplyEffect(MovePj player)
-    {
-        player._speed += boostAmount;
-        StartCoroutine(RemoveEffect(player));
-    }
-
-    private IEnumerator RemoveEffect(MovePj player)
-    {
-        yield return new WaitForSeconds(duration);
-        player._speed -= boostAmount;
-        Destroy(gameObject);
     }
 }
