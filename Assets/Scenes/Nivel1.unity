@@ -33101,6 +33101,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 6212270416902328988, guid: f8c768c77ed6a3f43a9527d57ce703e8, type: 3}
+      propertyPath: BarraVida
+      value: 
+      objectReference: {fileID: 1735406303}
     - target: {fileID: 7005454003199976106, guid: f8c768c77ed6a3f43a9527d57ce703e8, type: 3}
       propertyPath: OutputAudioMixerGroup
       value: 
