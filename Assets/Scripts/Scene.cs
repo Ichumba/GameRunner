@@ -19,9 +19,6 @@ public class Scene : MonoBehaviour
         {
             SceneManager.LoadScene("Menu");
         }
-        if (Input.GetKeyDown(KeyCode.R))
-        {
-            SceneManager.LoadScene("Prototype");
-        }
+
     }
 }
