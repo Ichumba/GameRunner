@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 701f109c797279f4e8ade3983485b996, type: 2}
     - target: {fileID: 7819513102630554842, guid: 909250197cc845144a91337470460ac3, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.44
+      value: 0.59
       objectReference: {fileID: 0}
     - target: {fileID: 7819513102630554842, guid: 909250197cc845144a91337470460ac3, type: 3}
       propertyPath: m_LocalPosition.y
@@ -149,7 +149,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7819513102630554842, guid: 909250197cc845144a91337470460ac3, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -13.970001
+      value: -13.4
       objectReference: {fileID: 0}
     - target: {fileID: 7819513102630554842, guid: 909250197cc845144a91337470460ac3, type: 3}
       propertyPath: m_LocalRotation.w
@@ -196,7 +196,7 @@ GameObject:
   - component: {fileID: 538534037}
   - component: {fileID: 538534036}
   m_Layer: 0
-  m_Name: Particle System
+  m_Name: Particle_Smoke
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -357,7 +357,7 @@ ParticleSystem:
     startLifetime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 5
+      scalar: 3
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -5015,7 +5015,7 @@ Transform:
   m_GameObject: {fileID: 538534035}
   serializedVersion: 2
   m_LocalRotation: {x: -0.7071053, y: -0, z: -0, w: 0.7071083}
-  m_LocalPosition: {x: 0, y: 0.61, z: 0}
+  m_LocalPosition: {x: -6.04, y: 0.61, z: -14.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -5979,7 +5979,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7190670114319346760, guid: 327b7559b4d599f45bdf9e2753ab9a32, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.48
+      value: -2.16
       objectReference: {fileID: 0}
     - target: {fileID: 7190670114319346760, guid: 327b7559b4d599f45bdf9e2753ab9a32, type: 3}
       propertyPath: m_LocalPosition.y
@@ -5987,7 +5987,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7190670114319346760, guid: 327b7559b4d599f45bdf9e2753ab9a32, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -14.120001
+      value: -13.53
       objectReference: {fileID: 0}
     - target: {fileID: 7190670114319346760, guid: 327b7559b4d599f45bdf9e2753ab9a32, type: 3}
       propertyPath: m_LocalRotation.w
