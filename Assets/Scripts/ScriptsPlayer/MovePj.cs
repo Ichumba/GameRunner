@@ -25,9 +25,14 @@ public class MovePj : MonoBehaviour
 
     public Vector3 _rotate;
     public float sensitivity = .5f;
-
     Vector3 _cameraForward2D;
     private bool _isBoosting = false;
+
+    public float coyoteTime = 0.2f;
+    [SerializeField]private float coyoteTimeCounter;
+    public LayerMask Ground;
+    public float groundRayLength = 0.3f;
+    
 
     private void Awake()
     {
@@ -41,8 +46,8 @@ public class MovePj : MonoBehaviour
     private void Jump()
     {
         _rigidbody.AddForce(transform.up * _JumpForce, ForceMode.Impulse);
+        
     }
-
     void Update()
     {
         CameraRot();
@@ -62,6 +67,19 @@ public class MovePj : MonoBehaviour
         {
             _CanJump = Input.GetKeyDown(KeyCode.Space);
         }
+
+        RaycastHit hit;
+        if (Physics.Raycast(transform.position, Vector3.down, out hit, groundRayLength, Ground))
+        {
+            _isGround = true;
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            _isGround = false;
+            coyoteTimeCounter -= Time.fixedDeltaTime;
+        }
+       
     }
 
     void CameraRot()
@@ -81,21 +99,31 @@ public class MovePj : MonoBehaviour
     {
         Collider[] foundColliders = Physics.OverlapSphere(_feet.position, _groundDetecRadius, _groudCheckLayer);
         _isGround = foundColliders.Length > 0;
-        if (_CanJump && _isGround)
+       
+        if (_CanJump && _isGround && coyoteTimeCounter > 0f)
         {
+            
             Jump();
             _CanJump = false;
+            
+            
         }
+        
 
         Vector3 movement = _direction * _speed * Time.fixedDeltaTime;
         _rigidbody.MovePosition(_rigidbody.position + movement);
+       
+       
     }
 
     private void OnDrawGizmos()
     {
         Gizmos.color = _isGround ? Color.green : Color.red;
+        
         if (_feet)
             Gizmos.DrawSphere(_feet.position, _groundDetecRadius);
+        Gizmos.color = Color.yellow;
+        Gizmos.DrawLine(transform.position, transform.position + Vector3.down * groundRayLength);
     }
 
     public void ApplyBoost(BoostType boostType, float value, float duration)
