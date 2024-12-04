@@ -77,7 +77,7 @@ public class MovePj : MonoBehaviour
         else
         {
             _isGround = false;
-            coyoteTimeCounter -= Time.fixedDeltaTime;
+            coyoteTimeCounter -= Time.deltaTime;
         }
        
     }
@@ -105,6 +105,7 @@ public class MovePj : MonoBehaviour
             
             Jump();
             _CanJump = false;
+            coyoteTime= 0f;
             
             
         }
