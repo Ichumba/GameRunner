@@ -9,6 +9,7 @@ public class AudioManager : MonoBehaviour
     public AudioMixer audioMix;
     public List<AudioClip> clips;
     public AudioSource source;
+    
     private void Awake()
     {
      source = GetComponent<AudioSource>();   
@@ -18,8 +19,10 @@ public class AudioManager : MonoBehaviour
     {
         if (clipIndex >= 0 && clipIndex < clips.Count)
         {
-            
+            return;
         }
+        source.clip = clips[clipIndex];
+        source.Play();
     }
     void Start()
     {

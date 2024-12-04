@@ -10,7 +10,7 @@ public class Turret : Enemy
     [SerializeField] private Bullet bala;
     [SerializeField] private float distancia = 20;
     [SerializeField] private Transform ShootingPoint;
-
+    AudioSource _source;
     private bool disparado = false;
 
 
@@ -38,6 +38,7 @@ public class Turret : Enemy
 
     IEnumerator Disparo(float Shot)
     {
+       
         disparado = true;
         yield return new WaitForSeconds(Shot);
         Bullet Proyectile = Instantiate(bala, ShootingPoint.position, transform.rotation* Quaternion.Euler(90f, 0f, 0f));
