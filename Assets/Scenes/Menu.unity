@@ -1113,11 +1113,8 @@ MonoBehaviour:
   _source: {fileID: 220298823}
   _mixer: {fileID: 24100000, guid: 45f2b6dbd1488534a938cc27455f205d, type: 2}
   _masterSlider: {fileID: 788610292}
-  _inMasterVol: 0.5
   _musicSlider: {fileID: 307856001}
-  _inMusicVol: 0.5
   _sfxSlider: {fileID: 1662180035}
-  _inSFXVol: 1
 --- !u!1 &234246576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,17 +1385,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 1047880025}
   m_HandleRect: {fileID: 1559564505}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.0001
+  m_Value: 0.834
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 220298825}
         m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
         m_MethodName: SetMusicVol
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2665,7 +2662,7 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.8490566, g: 0.5166429, b: 0.5166429, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
@@ -2686,17 +2683,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 1320847773}
   m_HandleRect: {fileID: 129191630}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.0001
+  m_Value: 0.834
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 220298825}
         m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
         m_MethodName: SetMasterVol
-        m_Mode: 4
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4186,17 +4183,17 @@ MonoBehaviour:
   m_FillRect: {fileID: 287467103}
   m_HandleRect: {fileID: 1235270420}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 20
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0.0001
+  m_Value: 0.834
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 220298825}
         m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
         m_MethodName: SetSFXVol
-        m_Mode: 0
+        m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
