@@ -105,7 +105,7 @@ public class MovePj : MonoBehaviour
             
             Jump();
             _CanJump = false;
-            coyoteTime= 0f;
+            
             
             
         }

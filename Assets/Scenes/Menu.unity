@@ -1113,8 +1113,11 @@ MonoBehaviour:
   _source: {fileID: 220298823}
   _mixer: {fileID: 24100000, guid: 45f2b6dbd1488534a938cc27455f205d, type: 2}
   _masterSlider: {fileID: 788610292}
+  _inMasterVol: 0.5
   _musicSlider: {fileID: 307856001}
+  _inMusicVol: 0.5
   _sfxSlider: {fileID: 1662180035}
+  _inSFXVol: 1
 --- !u!1 &234246576
 GameObject:
   m_ObjectHideFlags: 0
@@ -1395,7 +1398,7 @@ MonoBehaviour:
       - m_Target: {fileID: 220298825}
         m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
         m_MethodName: SetMusicVol
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2693,7 +2696,7 @@ MonoBehaviour:
       - m_Target: {fileID: 220298825}
         m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
         m_MethodName: SetMasterVol
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -4193,7 +4196,7 @@ MonoBehaviour:
       - m_Target: {fileID: 220298825}
         m_TargetAssemblyTypeName: MusicManager, Assembly-CSharp
         m_MethodName: SetSFXVol
-        m_Mode: 1
+        m_Mode: 4
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
