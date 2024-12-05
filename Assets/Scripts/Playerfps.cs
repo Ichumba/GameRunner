@@ -10,6 +10,7 @@ public class PlayerFPS : MonoBehaviour, IDamage, IBoostable
     [SerializeField] private float _maxLife;
     [SerializeField] private float _shield;
     [SerializeField] private Image BarraVida;
+    [SerializeField] private AudioSource Hit;
     private Vector3 Inicio;
     public UnityEvent death;
 
@@ -71,6 +72,7 @@ public class PlayerFPS : MonoBehaviour, IDamage, IBoostable
         else
         {
             _life -= damage;
+            Hit.Play();
         }
 
         Debug.Log("Vida actual después del daño: " + _life);

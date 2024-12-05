@@ -45,15 +45,15 @@ public class MusicManager : MonoBehaviour
     }
     public void SetMasterVol(float value)
     {
-        _mixer.SetFloat("MasterVol",Mathf.Log10(value)* 20);
+        _mixer.SetFloat("MasterVol", value);
     }
     public void SetMusicVol(float value)
     {
-        _mixer.SetFloat("MusicVol" ,Mathf.Log10(value)* 20);
+        _mixer.SetFloat("MusicVol" , value);
     }
     public void SetSFXVol(float value)
     {
-        _mixer.SetFloat("SFXVol", Mathf.Log10(value)* 20);
+        _mixer.SetFloat("SFXVol", value);
     }
     public void PlayAudio(AudioClip clip)
     {
