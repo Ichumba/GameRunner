@@ -36,24 +36,21 @@ public class MusicManager : MonoBehaviour
     void Start()
     {
         _masterSlider.value = _inMasterVol;
-        SetMasterVol(_inMasterVol);
         _musicSlider.value = _inMusicVol;
-        SetMusicVol(_inMusicVol);
         _sfxSlider.value = _inSFXVol;
-        SetSFXVol(_inSFXVol);
 
     }
-    public void SetMasterVol(float value)
+    public void SetMasterVol()
     {
-        _mixer.SetFloat("MasterVol",Mathf.Log10(value)* 20);
+        _mixer.SetFloat("MasterVol",Mathf.Log10(_masterSlider.value) * 20);
     }
-    public void SetMusicVol(float value)
+    public void SetMusicVol()
     {
-        _mixer.SetFloat("MusicVol" ,Mathf.Log10(value)* 20);
+        _mixer.SetFloat("MusicVol" ,Mathf.Log10(_musicSlider.value) * 20);
     }
-    public void SetSFXVol(float value)
+    public void SetSFXVol()
     {
-        _mixer.SetFloat("SFXVol", Mathf.Log10(value)* 20);
+        _mixer.SetFloat("SFXVol", Mathf.Log10(_sfxSlider.value)* 20);
     }
     public void PlayAudio(AudioClip clip)
     {

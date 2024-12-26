@@ -4,5 +4,6 @@ using UnityEngine;
 
 public interface IDamage 
 {
+    //Tomas Gomez
     void TakeDamage(int damage);
 }

@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class Chaser : Enemy
 {
+    //Tomas Gomez
+
     [SerializeField] private float speed;
     [SerializeField] private float distancia = 20;
     private bool cerca = false;
@@ -20,10 +22,6 @@ public class Chaser : Enemy
 
     private void Update()
     {
-        if (player == null)
-        {
-            Destroy(this);
-        }
 
 
         if (Vector3.Distance(transform.position, player.position) <= distancia)

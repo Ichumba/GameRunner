@@ -5,10 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class Scene : MonoBehaviour
 {
-    // Start is called before the first frame update
+  //Tomas Gomez
     void Start()
     {
-        
+        PlayerFPS.death += Level;
     }
 
     // Update is called once per frame
@@ -20,5 +20,10 @@ public class Scene : MonoBehaviour
             SceneManager.LoadScene("Menu");
         }
 
+    }
+
+    private void Level()
+    {
+        SceneManager.LoadScene("Nivel1");
     }
 }

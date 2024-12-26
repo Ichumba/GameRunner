@@ -23,10 +23,6 @@ public class Turret : Enemy
         }
 
 
-        if (player == null)
-        {
-            Destroy(this);
-        }
     }
 
     private void FixedUpdate()

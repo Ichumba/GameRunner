@@ -36,6 +36,7 @@ public abstract class Enemy : MonoBehaviour, IDamage
         Arma = player.GetComponent<WeaponPlayer>();
         Jugador = player.GetComponent<PlayerFPS>();
         rb = GetComponent<Rigidbody>();
+        PlayerFPS.death += destroy;
     }
 
     public void TakeDamage(int damage)
@@ -44,8 +45,13 @@ public abstract class Enemy : MonoBehaviour, IDamage
 
         if (Life <= 0)
         {
-            Destroy(gameObject);
+            destroy();
         }
+    }
+
+    void destroy()
+    {
+        Destroy(gameObject);
     }
 
     

@@ -12,7 +12,8 @@ public class PlayerFPS : MonoBehaviour, IDamage, IBoostable
     [SerializeField] private Image BarraVida;
     [SerializeField] private AudioSource Hit;
     private Vector3 Inicio;
-    public UnityEvent death;
+    public delegate void Die();
+    static public event Die death;
 
     private void Start()
     {

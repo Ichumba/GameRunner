@@ -6,6 +6,13 @@ using UnityEngine.SceneManagement;
 public class Menu : MonoBehaviour
 {
     // Tomas Gomez
+
+    private void Start()
+    {
+        UnityEngine.Cursor.lockState = CursorLockMode.None;
+        UnityEngine.Cursor.visible = true;
+    }
+
     public void Play()
     {
         SceneManager.LoadScene("Nivel1");
