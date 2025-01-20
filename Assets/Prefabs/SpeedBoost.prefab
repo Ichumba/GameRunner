@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 3643916376885847506}
   - component: {fileID: 7079032142660184917}
   - component: {fileID: 8195003314518626032}
+  - component: {fileID: 2110712090026635724}
   m_Layer: 0
   m_Name: SpeedBoost
   m_TagString: Untagged
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 7971905925895054565}
   serializedVersion: 2
   m_LocalRotation: {x: -0.6521202, y: -0, z: -0, w: 0.7581156}
-  m_LocalPosition: {x: -0.61, y: 2.982296, z: 2.2138762}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.3670235, y: 0.04170488, z: 0.3670235}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -122,3 +123,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   boostAmount: 8.81
   duration: 5
+--- !u!95 &2110712090026635724
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7971905925895054565}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 764ab984e6ce0ac46a80079e2eb5ce99, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
