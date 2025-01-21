@@ -6,11 +6,12 @@ public class MusicResq : MonoBehaviour
 {
 
 
-    [Header("Audio")]
+    /*[Header("Audio")]
     [SerializeField] private AudioClip _cliptoPlay;
 
      void Start()
     {
         MusicManager.Instance.PlayAudio(_cliptoPlay);
     }
+    */
 }

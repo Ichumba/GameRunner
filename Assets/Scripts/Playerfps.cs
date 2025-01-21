@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
@@ -11,7 +12,6 @@ public class PlayerFPS : MonoBehaviour, IDamage, IBoostable
     [SerializeField] private float _shield;
     [SerializeField] private Image BarraVida;
     [SerializeField] private AudioSource Hit;
-    private Vector3 Inicio;
     public delegate void Die();
     static public event Die death;
 
@@ -19,7 +19,7 @@ public class PlayerFPS : MonoBehaviour, IDamage, IBoostable
     {
         _life = Mathf.Min(_life, _maxLife);
         _shield = 0;
-        Inicio = transform.position;
+
         UpdateHealthBar();
     }
 
@@ -98,10 +98,12 @@ public class PlayerFPS : MonoBehaviour, IDamage, IBoostable
 
     private void OnTriggerEnter(Collider col)
     {
+         Transform respawn = col.transform.parent.transform;
+
         if (col.gameObject.layer == Layer.OutOfBounds)
         {
-            transform.position = Inicio;
             _life -= 10;
+            transform.position = respawn.position;
         }
     }
 }
