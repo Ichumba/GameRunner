@@ -118,7 +118,6 @@ GameObject:
   - component: {fileID: 4276487549523899340}
   - component: {fileID: 5793166481856122105}
   - component: {fileID: 3568708289512735335}
-  - component: {fileID: 8415364054583392097}
   - component: {fileID: 7836597404845178132}
   m_Layer: 0
   m_Name: Canon
@@ -192,26 +191,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &8415364054583392097
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1994562542980332848}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74be04a942585f8429abe0c63305138c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Life: 50
-  Damage: 10
-  player: {fileID: 0}
-  Jugador: {fileID: 0}
-  shoot: 5
-  bala: {fileID: 3448947526224937018, guid: 6c4516f2e31d33944a4fcbab1be22413, type: 3}
-  distancia: 60
-  ShootingPoint: {fileID: 0}
 --- !u!136 &7836597404845178132
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -246,7 +225,6 @@ GameObject:
   - component: {fileID: 5703459703175454559}
   - component: {fileID: 5812711714026573513}
   - component: {fileID: 4144060887373264099}
-  - component: {fileID: 4098367345748769456}
   - component: {fileID: 2778513606116357497}
   m_Layer: 0
   m_Name: Canon
@@ -320,26 +298,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &4098367345748769456
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4569523198843981451}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 74be04a942585f8429abe0c63305138c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Life: 50
-  Damage: 10
-  player: {fileID: 0}
-  Jugador: {fileID: 0}
-  shoot: 5
-  bala: {fileID: 3448947526224937018, guid: 6c4516f2e31d33944a4fcbab1be22413, type: 3}
-  distancia: 60
-  ShootingPoint: {fileID: 8054738783853724354}
 --- !u!136 &2778513606116357497
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1256,7 +1214,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 2569
+  m_VersionIndex: 2572
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
