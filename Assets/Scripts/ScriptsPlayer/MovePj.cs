@@ -32,8 +32,8 @@ public class MovePj : MonoBehaviour
     [SerializeField]private float coyoteTimeCounter;
     public LayerMask Ground;
     public float groundRayLength = 0.3f;
-    
 
+    bool Holding;
     private void Awake()
     {
         _rigidbody = GetComponent<Rigidbody>();
@@ -166,4 +166,5 @@ public class MovePj : MonoBehaviour
         _health += amount;
         Debug.Log($"Health increased by {amount}. Current health: {_health}");
     }
+    
 }
