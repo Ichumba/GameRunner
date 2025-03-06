@@ -12,6 +12,8 @@ public class PlayerFPS : MonoBehaviour, IDamage, IBoostable
     [SerializeField] private float _shield;
     [SerializeField] private Image BarraVida;
     [SerializeField] private AudioSource Hit;
+    [SerializeField] private AudioSource Life;
+    [SerializeField] private AudioSource Shield;
     public delegate void Die();
     static public event Die death;
 
@@ -47,6 +49,7 @@ public class PlayerFPS : MonoBehaviour, IDamage, IBoostable
 
     private void IncreaseHealth(int amount)
     {
+        Life.Play();
         _life += amount;
         _life = Mathf.Min(_life, _maxLife);
         Debug.Log("Vida actual: " + _life);
@@ -55,6 +58,7 @@ public class PlayerFPS : MonoBehaviour, IDamage, IBoostable
 
     private void ApplyShield(float amount)
     {
+        Shield.Play();
         _shield += amount;
         Debug.Log("Escudo actual: " + _shield);
     }
@@ -98,10 +102,10 @@ public class PlayerFPS : MonoBehaviour, IDamage, IBoostable
 
     private void OnTriggerEnter(Collider col)
     {
-         Transform respawn = col.transform.parent.transform;
 
         if (col.gameObject.layer == Layer.OutOfBounds)
         {
+            Transform respawn = col.transform.parent.transform;
             _life -= 10;
             transform.position = respawn.position;
         }
