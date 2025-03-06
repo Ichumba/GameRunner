@@ -10,6 +10,7 @@ public class Chaser : Enemy
     [SerializeField] private float speed;
     [SerializeField] private float distancia = 20;
     private bool cerca = false;
+    private bool daño;
     public Animator _animator;
 
 
@@ -48,17 +49,34 @@ public class Chaser : Enemy
        
        
     }
-    
+
+    private IEnumerator Hit()
+    {
+        daño = false;
+        Jugador.TakeDamage(Damage);
+        yield return new WaitForSeconds(1);
+        daño= true;
+        
+    }
+
     private void OnCollisionEnter(Collision col)
     {
 
-        if (col.gameObject.layer == Layer.Player)
+        if (col.gameObject.layer == Layer.Player && daño == true)
         {
-            print("toco");
-
-            Jugador.TakeDamage(Damage);
+            StartCoroutine(Hit());
+            
         }
 
+    }
+
+    private void OnTriggerStay(Collider col)
+    {
+        if (col.gameObject.layer == Layer.Player && daño == true)
+        {
+            StartCoroutine(Hit());
+
+        }
     }
 
 

@@ -37,8 +37,5 @@ public class VallaLaser : MonoBehaviour
         active = false;
     }
 
-    void Update()
-    {
-        
-    }
+
 }
