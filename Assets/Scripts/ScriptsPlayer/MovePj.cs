@@ -41,7 +41,20 @@ public class MovePj : MonoBehaviour
         _cameraTransform = GetComponentInChildren<Camera>().transform;
     }
 
-    private void Start() { }
+    private void Start() 
+    {
+#if UNITY_STANDALONE_WIN
+        
+            print("Windows");
+
+
+#elif UNITY_ANDROID
+        
+            print("Android");
+            
+#endif
+    }
+
 
     private void Jump()
     {
