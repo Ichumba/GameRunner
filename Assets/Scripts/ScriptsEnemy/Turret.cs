@@ -28,17 +28,17 @@ public class Turret : Enemy
     private void FixedUpdate()
     {
         Vector3 direction = player.position - transform.position;
-        float angle = Mathf.Atan2(direction.z, direction.x) * Mathf.Rad2Deg;
-        transform.rotation = Quaternion.AngleAxis(-angle, Vector3.up);
+        transform.forward = direction.normalized;
     }
 
     IEnumerator Disparo(float Shot)
     {
-       
+        
         disparado = true;
         yield return new WaitForSeconds(Shot);
-        Bullet Proyectile = Instantiate(bala, ShootingPoint.position, transform.rotation* Quaternion.Euler(90f, 0f, -90f));
-        Proyectile.damage = Damage;
+        var bullet = BulletFactory.Instance.GetFromPool();
+        bullet.transform.position = ShootingPoint.position;
+        bullet.transform.rotation = ShootingPoint.rotation;
         disparado = false;
     }
 

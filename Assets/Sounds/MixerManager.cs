@@ -13,7 +13,19 @@ public class MixerManager : MonoBehaviour
     [SerializeField] private Slider SFXSlider;
     [SerializeField] private Slider MusicSlider;
     [SerializeField] private AudioSource SFXClip;
+    public static MixerManager Instance { get; private set; }
 
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+            
+        else
+            Destroy(gameObject);
+    }
     public class VolumeS
     {
         public static float MasterVolume = 0;
@@ -32,25 +44,25 @@ public class MixerManager : MonoBehaviour
     public void SetVolume()
     {
         float volume = MasterSlider.value;
-        mixer.SetFloat("MasterVol", volume);
-        PlayerPrefs.SetFloat("MasterVol", volume);
-        VolumeS.MasterVolume = volume;
+        mixer.SetFloat("MasterVol", 20 * Mathf.Log10(volume));
+        PlayerPrefs.SetFloat("MasterVol", 20 * Mathf.Log10(volume));
+        VolumeS.MasterVolume = 20 * Mathf.Log10(volume);
     }
 
     public void SetSFX()
     {
         float volume = SFXSlider.value;
-        mixer.SetFloat("SFXVol", volume);
-        PlayerPrefs.SetFloat("SFXVol", volume);
-        VolumeS.SFXVolume = volume;
+        mixer.SetFloat("SFXVol", 20 * Mathf.Log10(volume));
+        PlayerPrefs.SetFloat("SFXVol", 20 * Mathf.Log10(volume));
+        VolumeS.SFXVolume = 20 * Mathf.Log10(volume);
     }
 
     public void SetMusic()
     {
         float volume = MusicSlider.value;
-        mixer.SetFloat("MusicVol", volume);
-        PlayerPrefs.SetFloat("MusicVol", volume);
-        VolumeS.MusicVolume = volume;
+        mixer.SetFloat("MusicVol", 20 * Mathf.Log10(volume));
+        PlayerPrefs.SetFloat("MusicVol", 20 * Mathf.Log10(volume));
+        VolumeS.MusicVolume = 20 * Mathf.Log10(volume);
     }
 
     private void LoadVolume()

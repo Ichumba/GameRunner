@@ -22,13 +22,23 @@ public class Bullet : MonoBehaviour
         if (damages!=null)
         {
             damages.TakeDamage(damage);
-            Destroy(gameObject);
+            BulletFactory.Instance.ReturnToPool(this);
         }
         else
         {
-            Destroy(gameObject);
+            BulletFactory.Instance.ReturnToPool(this);
         }
 
+    }
+
+    public static void TurnOn(Bullet b)
+    {
+        b.gameObject.SetActive(true);
+    }
+
+    public static void TurnOff(Bullet b)
+    {
+        b.gameObject.SetActive(false);
     }
 
     void FixedUpdate()
