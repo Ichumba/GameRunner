@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using UnityEngine;
 using System;
-using OpenCover.Framework.Model;
 using static PlayerFPS;
 
 public class SliderSetter : MonoBehaviour

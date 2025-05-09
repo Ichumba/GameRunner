@@ -216,7 +216,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Pay Test
+  m_text: 'Sound Test
 
 '
   m_isRightToLeft: 0
@@ -1539,9 +1539,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mixer: {fileID: 24100000, guid: 45f2b6dbd1488534a938cc27455f205d, type: 2}
-  MasterSlider: {fileID: 0}
-  SFXSlider: {fileID: 0}
-  MusicSlider: {fileID: 0}
+  MasterSlider: {fileID: 1143316573}
+  SFXSlider: {fileID: 1970397235}
+  MusicSlider: {fileID: 1379131353}
   SFXClip: {fileID: 421762767}
 --- !u!4 &421762766
 Transform:

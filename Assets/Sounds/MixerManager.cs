@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -82,7 +81,7 @@ public class MixerManager : MonoBehaviour
 
 }
 
-public static class VolumeS
+public class VolumeS
 {
     public static float MasterVolume = 0;
     public static float SFXVolume = 0;
