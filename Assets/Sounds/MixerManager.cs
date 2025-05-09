@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.PackageManager;
 using UnityEngine;
 using UnityEngine.Audio;
 using UnityEngine.UI;
@@ -9,9 +10,9 @@ public class MixerManager : MonoBehaviour
     //Tomas Gomez
 
     [SerializeField] private AudioMixer mixer;
-    [SerializeField] private Slider MasterSlider;
-    [SerializeField] private Slider SFXSlider;
-    [SerializeField] private Slider MusicSlider;
+    public Slider MasterSlider;
+    public Slider SFXSlider;
+    public Slider MusicSlider;
     [SerializeField] private AudioSource SFXClip;
     public static MixerManager Instance { get; private set; }
 
@@ -25,6 +26,8 @@ public class MixerManager : MonoBehaviour
             
         else
             Destroy(gameObject);
+        
+
     }
     
     private void Start()
@@ -35,25 +38,25 @@ public class MixerManager : MonoBehaviour
 
     }
 
-    public void SetVolume()
+    public void SetVolume(float volume)
     {
-        float volume = MasterSlider.value;
+        volume = MasterSlider.value;
         mixer.SetFloat("MasterVol", 20 * Mathf.Log10(volume));
         PlayerPrefs.SetFloat("MasterVol", 20 * Mathf.Log10(volume));
         VolumeS.MasterVolume = 20 * Mathf.Log10(volume);
     }
 
-    public void SetSFX()
+    public void SetSFX(float volume)
     {
-        float volume = SFXSlider.value;
+        volume = SFXSlider.value;
         mixer.SetFloat("SFXVol", 20 * Mathf.Log10(volume));
         PlayerPrefs.SetFloat("SFXVol", 20 * Mathf.Log10(volume));
         VolumeS.SFXVolume = 20 * Mathf.Log10(volume);
     }
 
-    public void SetMusic()
+    public void SetMusic(float volume)
     {
-        float volume = MusicSlider.value;
+        volume = MusicSlider.value;
         mixer.SetFloat("MusicVol", 20 * Mathf.Log10(volume));
         PlayerPrefs.SetFloat("MusicVol", 20 * Mathf.Log10(volume));
         VolumeS.MusicVolume = 20 * Mathf.Log10(volume);
@@ -61,18 +64,15 @@ public class MixerManager : MonoBehaviour
 
     private void LoadVolume()
     {
-        MasterSlider.value = VolumeS.MasterVolume;
-        SetVolume();
+        SetVolume(VolumeS.MasterVolume);
     }
     private void LoadSFX()
     {
-        SFXSlider.value = VolumeS.SFXVolume;
-        SetSFX();
+        SetSFX(VolumeS.SFXVolume);
     }
     private void LoadMusic()
     {
-        MusicSlider.value = VolumeS.MusicVolume;
-        SetMusic();
+        SetMusic(VolumeS.MusicVolume);
     }
 
     public void PlayTest()
@@ -82,7 +82,7 @@ public class MixerManager : MonoBehaviour
 
 }
 
-public class VolumeS
+public static class VolumeS
 {
     public static float MasterVolume = 0;
     public static float SFXVolume = 0;
