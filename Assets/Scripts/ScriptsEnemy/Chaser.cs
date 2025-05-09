@@ -25,7 +25,7 @@ public class Chaser : Enemy
     {
 
 
-        if (Vector3.Distance(transform.position, player.position) <= distancia)
+        if (Vector3.Distance(transform.position, player.position) <= _data.Range)
         {
             cerca = true;
         }
@@ -53,7 +53,7 @@ public class Chaser : Enemy
     private IEnumerator Hit()
     {
         daño = false;
-        Jugador.TakeDamage(Damage);
+        Jugador.TakeDamage(_data.Damage);
         yield return new WaitForSeconds(1);
         daño= true;
         

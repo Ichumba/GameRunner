@@ -2040,9 +2040,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 100
-  Damage: 20
   player: {fileID: 0}
   Jugador: {fileID: 0}
+  _data: {fileID: 11400000, guid: c255ed8c93bc02549942f58e582ba462, type: 2}
   speed: 1
   distancia: 20
   _animator: {fileID: 8255209659499740156}

@@ -17,15 +17,13 @@ public abstract class Enemy : MonoBehaviour, IDamage
     protected int Life;
 
     [SerializeField] 
-    protected int Damage;
-
-    [SerializeField] 
     protected Transform player;
 
     [SerializeField] 
     protected PlayerFPS Jugador;
 
-    protected WeaponPlayer Arma;
+    [SerializeField] protected FlyWeight _data;
+
     
     protected Rigidbody rb;
 
@@ -33,8 +31,6 @@ public abstract class Enemy : MonoBehaviour, IDamage
 
     void Start()
     {
-        Arma = player.GetComponent<WeaponPlayer>();
-        Jugador = player.GetComponent<PlayerFPS>();
         rb = GetComponent<Rigidbody>();
         PlayerFPS.death += destroy;
     }

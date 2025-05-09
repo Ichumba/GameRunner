@@ -17,7 +17,7 @@ public class Turret : Enemy
 
     void Update()
     {
-        if (disparado == false && Vector3.Distance(transform.position, player.position) <= distancia)
+        if (disparado == false && Vector3.Distance(transform.position, player.position) <= _data.Range)
         {
             StartCoroutine(Disparo(shoot));
         }
@@ -37,6 +37,7 @@ public class Turret : Enemy
         disparado = true;
         yield return new WaitForSeconds(Shot);
         var bullet = BulletFactory.Instance.GetFromPool();
+        bullet.damage = _data.Damage;
         bullet.transform.position = ShootingPoint.position;
         bullet.transform.rotation = ShootingPoint.rotation;
         disparado = false;

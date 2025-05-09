@@ -263,9 +263,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 50
-  Damage: 10
   player: {fileID: 0}
   Jugador: {fileID: 0}
+  _data: {fileID: 0}
   shoot: 5
   bala: {fileID: 3448947526224937018, guid: 6c4516f2e31d33944a4fcbab1be22413, type: 3}
   distancia: 60
@@ -1427,9 +1427,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Life: 50
-  Damage: 10
   player: {fileID: 0}
   Jugador: {fileID: 0}
+  _data: {fileID: 11400000, guid: e2a8f01666c0a8b47a006e9ed582467f, type: 2}
   shoot: 5
   bala: {fileID: 3448947526224937018, guid: 6c4516f2e31d33944a4fcbab1be22413, type: 3}
   distancia: 60

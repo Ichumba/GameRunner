@@ -26,13 +26,7 @@ public class MixerManager : MonoBehaviour
         else
             Destroy(gameObject);
     }
-    public class VolumeS
-    {
-        public static float MasterVolume = 0;
-        public static float SFXVolume = 0;
-        public static float MusicVolume = 0;
-
-    }
+    
     private void Start()
     {
         LoadMusic();
@@ -85,5 +79,13 @@ public class MixerManager : MonoBehaviour
     {
         SFXClip.Play();
     }
+
+}
+
+public class VolumeS
+{
+    public static float MasterVolume = 0;
+    public static float SFXVolume = 0;
+    public static float MusicVolume = 0;
 
 }
