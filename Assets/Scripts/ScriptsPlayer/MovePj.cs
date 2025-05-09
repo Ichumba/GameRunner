@@ -45,7 +45,7 @@ public class MovePj : MonoBehaviour
     {
 #if UNITY_STANDALONE_WIN
         
-            print("Windows");
+            print("PC_Windows");
 
 
 #elif UNITY_ANDROID

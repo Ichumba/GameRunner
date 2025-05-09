@@ -8,6 +8,9 @@ public class VallaLaser : MonoBehaviour
     [SerializeField] GameObject laser;
     private bool active = false;
     [SerializeField] private AudioSource turnOn;
+    [SerializeField] private AudioSource turnOff;
+    [SerializeField] private float _turnOnDelay;
+    [SerializeField] private float _turnOffDelay;
 
 
     private void OnTriggerEnter(Collider col)
@@ -28,11 +31,12 @@ public class VallaLaser : MonoBehaviour
 
     private IEnumerator Activation()
     {
-        active = true;
+        active = true; 
+        yield return new WaitForSeconds(_turnOnDelay);
         turnOn.Play();
-        yield return new WaitForSeconds(0.5f);
         laser.SetActive(true);
-        yield return new WaitForSeconds(1);
+        yield return new WaitForSeconds(_turnOffDelay);
+        turnOff.Play();
         laser.SetActive(false);
         active = false;
     }
