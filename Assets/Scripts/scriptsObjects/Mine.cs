@@ -30,7 +30,8 @@ public class Mine : MonoBehaviour
         animator.SetBool("Boom",true);
         beep.Play();
         yield return new WaitForSeconds(delay);
-        Instantiate(boom, transform.position,transform.rotation);
+        var explotion = ExplotionFactory.Instance.GetFromPool();
+        explotion.transform.position = transform.position;
         Destroy(gameObject);
     }
 

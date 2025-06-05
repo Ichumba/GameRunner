@@ -13,9 +13,19 @@ public class Explosion : MonoBehaviour
         delay -= Time.deltaTime;
         if (delay < 0)
         {
-            Destroy(this.gameObject);
+            ExplotionFactory.Instance.ReturnToPool(this);
         }
 
+    }
+
+    public static void TurnOn(Explosion e)
+    {
+        e.gameObject.SetActive(true);
+    }
+
+    public static void TurnOff(Explosion e)
+    {
+        e.gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter(Collider col)

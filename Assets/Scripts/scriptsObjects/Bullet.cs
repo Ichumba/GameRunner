@@ -15,19 +15,15 @@ public class Bullet : MonoBehaviour
         rb = GetComponent<Rigidbody>();
     }
 
-    private  void OnTriggerEnter(Collider col)
+    private void OnTriggerEnter(Collider col)
     {
-        IDamage damages = col.GetComponent<IDamage>();
 
-        if (damages!=null)
+        if (col.TryGetComponent(out IDamage damages))
         {
             damages.TakeDamage(damage);
-            BulletFactory.Instance.ReturnToPool(this);
         }
-        else
-        {
-            BulletFactory.Instance.ReturnToPool(this);
-        }
+
+        BulletFactory.Instance.ReturnToPool(this);
 
     }
 
