@@ -11,10 +11,8 @@ public class MovementPlayer : MonoBehaviour
 {
     
     private Vector3 playerVelocity ;
-    private bool _groundPlayer;
     public float JumpForce;
     public float groundDistance = 0.5f;
-    private Player _player;
     private Rigidbody _rigidbody;
     Transform _transform;
     float _speed;
@@ -47,10 +45,6 @@ public class MovementPlayer : MonoBehaviour
     public void Jump()
     {
         _rigidbody.AddForce(Vector3.up * JumpForce, ForceMode.Impulse);
-    }
-    public virtual void FixedUpdate()
-    {
-      
     }
 
 }
