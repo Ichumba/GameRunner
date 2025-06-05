@@ -13,7 +13,6 @@ public class AmimantionPlayer : MonoBehaviour
     [SerializeField] private string _zAxisName = "zAxis";
     [SerializeField] private string _OnAttack = "OnAttack";
     
-    private MovementPlayer _movementPlayer;
     public void UpdatePlayerVelocity(Vector3 Velocity)
     {
         _animator.SetFloat(_xAxisName, Velocity.x);
