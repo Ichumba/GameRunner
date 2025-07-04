@@ -16429,6 +16429,7 @@ GameObject:
   - component: {fileID: 627015691}
   - component: {fileID: 627015693}
   - component: {fileID: 627015692}
+  - component: {fileID: 627015694}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -16552,6 +16553,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 627015690}
   m_CullTransparentMesh: 1
+--- !u!114 &627015694
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 627015690}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfae67f8bd4dc3949b9cc6e3461d7283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: ID_MainMenuButton
 --- !u!4 &628993060 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fef32d7d18e8ac5409373b8c68c35b0c, type: 3}
@@ -23570,6 +23584,7 @@ GameObject:
   - component: {fileID: 1043320659}
   - component: {fileID: 1043320661}
   - component: {fileID: 1043320660}
+  - component: {fileID: 1043320662}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -23695,6 +23710,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1043320658}
   m_CullTransparentMesh: 1
+--- !u!114 &1043320662
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043320658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfae67f8bd4dc3949b9cc6e3461d7283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: ID_ExitButton
 --- !u!43 &1046731781
 Mesh:
   m_ObjectHideFlags: 0
@@ -39275,6 +39303,7 @@ GameObject:
   - component: {fileID: 1337232679}
   - component: {fileID: 1337232681}
   - component: {fileID: 1337232680}
+  - component: {fileID: 1337232682}
   m_Layer: 5
   m_Name: Text (TMP)
   m_TagString: Untagged
@@ -39398,6 +39427,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1337232678}
   m_CullTransparentMesh: 1
+--- !u!114 &1337232682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1337232678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cfae67f8bd4dc3949b9cc6e3461d7283, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _id: ID_BackGameButton
 --- !u!43 &1341140367
 Mesh:
   m_ObjectHideFlags: 0

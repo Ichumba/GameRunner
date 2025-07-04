@@ -21,7 +21,7 @@ public class ClientDebugger : MonoBehaviour
             ScreenManager.Instance.Push(_pauseScreen);
             Cursor.lockState = CursorLockMode.Confined;
             Cursor.visible = true;
-            Time.timeScale = 0f;  
+            Time.timeScale = 0f;  // No sabia como pausar las corrutinas que usan wait for seconds
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
         {
