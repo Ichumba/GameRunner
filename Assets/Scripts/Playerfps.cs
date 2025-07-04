@@ -14,14 +14,20 @@ public class PlayerFPS : MonoBehaviour, IDamage, IBoostable
     [SerializeField] private AudioSource Hit;
     [SerializeField] private AudioSource Life;
     [SerializeField] private AudioSource Shield;
+    public static Transform _me { get; private set; }
     public delegate void Die();
     static public event Die death;
+
+    void Awake()
+    {
+        _me = GetComponent<Transform>();
+    }
 
     private void Start()
     {
         _life = Mathf.Min(_life, _maxLife);
         _shield = 0;
-
+        
         UpdateHealthBar();
     }
 

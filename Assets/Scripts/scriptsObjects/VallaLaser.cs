@@ -31,7 +31,7 @@ public class VallaLaser : MonoBehaviour
 
     private IEnumerator Activation()
     {
-        active = true; 
+        active = true;
         yield return new WaitForSeconds(_turnOnDelay);
         turnOn.Play();
         laser.SetActive(true);

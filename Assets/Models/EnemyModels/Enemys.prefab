@@ -1952,6 +1952,7 @@ GameObject:
   - component: {fileID: 6294983967581125499}
   - component: {fileID: 6880400946890880823}
   - component: {fileID: 8255209659499740156}
+  - component: {fileID: 5697548051225183864}
   - component: {fileID: 7972035396281337430}
   m_Layer: 0
   m_Name: Enemys
@@ -2039,9 +2040,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f43341555bcf3c44d83a27bf1c12d517, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Life: 100
   player: {fileID: 0}
-  Jugador: {fileID: 0}
+  Life: 100
   _data: {fileID: 11400000, guid: c255ed8c93bc02549942f58e582ba462, type: 2}
   speed: 1
   distancia: 20
@@ -2067,6 +2067,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5697548051225183864
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7494596171663581503}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 001e573380d366e4b89bc72ff0a6c9e5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &7972035396281337430
 MonoBehaviour:
   m_ObjectHideFlags: 0

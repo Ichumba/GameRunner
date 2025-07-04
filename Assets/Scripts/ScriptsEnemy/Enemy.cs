@@ -11,27 +11,20 @@ public class Layer
 }
 public abstract class Enemy : MonoBehaviour, IDamage
 {
-    // Tomas Gomez
 
-    [SerializeField] 
-    protected int Life;
-
-    [SerializeField] 
-    protected Transform player;
-
-    [SerializeField] 
+    [SerializeField] protected Transform player;
     protected PlayerFPS Jugador;
-
-    [SerializeField] protected FlyWeight _data;
-
-    
     protected Rigidbody rb;
 
-    
+
+    [SerializeField] protected int Life;
+    [SerializeField] protected FlyWeight _data;
 
     void Start()
     {
         rb = GetComponent<Rigidbody>();
+        player = PlayerFPS._me;
+        Jugador = player.GetComponent<PlayerFPS>();
         PlayerFPS.death += destroy;
     }
 

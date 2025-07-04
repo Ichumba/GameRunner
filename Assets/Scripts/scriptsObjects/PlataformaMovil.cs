@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlataformaMovil : MonoBehaviour
 {
-    // Tomas Gomez
     [SerializeField] private float speed = 5.0f;
     public Transform[] waypoint ;
     private int actualWaypoint = 0;

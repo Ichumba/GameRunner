@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Chaser : Enemy
 {
-    //Tomas Gomez
 
     [SerializeField] private float speed;
     [SerializeField] private float distancia = 20;
@@ -55,8 +54,9 @@ public class Chaser : Enemy
         daño = false;
         Jugador.TakeDamage(_data.Damage);
         yield return new WaitForSeconds(1);
-        daño= true;
-        
+
+        daño = true;
+
     }
 
     private void OnCollisionEnter(Collision col)

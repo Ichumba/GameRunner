@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PlataformaDesvanecedora : MonoBehaviour
 {
-    // Tomas Gomez
     private Coroutine Vanished;
     [SerializeField] private float durability;
     [SerializeField] private Transform child;
@@ -55,7 +54,6 @@ public class PlataformaDesvanecedora : MonoBehaviour
 
     IEnumerator Respawn()
     {
-
         yield return new WaitForSeconds(durability);
         Renderer.enabled = true;
         Collider.enabled = true;

@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Turret : Enemy
 {
-    // Tomas Gomez
     [SerializeField] float shoot;
     [SerializeField] private Bullet bala;
     [SerializeField] private float distancia = 20;

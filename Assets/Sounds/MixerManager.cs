@@ -6,7 +6,6 @@ using UnityEngine.UI;
 
 public class MixerManager : MonoBehaviour
 {
-    //Tomas Gomez
 
     [SerializeField] private AudioMixer mixer;
     public Slider MasterSlider;

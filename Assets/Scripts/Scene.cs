@@ -5,21 +5,15 @@ using UnityEngine.SceneManagement;
 
 public class Scene : MonoBehaviour
 {
-  //Tomas Gomez
     void Start()
     {
         PlayerFPS.death += Level;
     }
 
-    // Update is called once per frame
-    void Update()
+
+    public void Menu()
     {
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            SceneManager.LoadScene("Menu");
-        }
-
+        SceneManager.LoadScene("Menu");
     }
 
     private void Level()
