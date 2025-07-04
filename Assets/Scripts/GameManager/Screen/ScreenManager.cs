@@ -33,8 +33,12 @@ public class ScreenManager : MonoBehaviour
     public void Pop()
     {
         if (_screensStack.Count <= 1) return;
-        else if (_screensStack.Count == 2 ) Time.timeScale = 1.0f;
-
+        else if (_screensStack.Count == 2)
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
+            Time.timeScale = 1.0f;
+        }
         var screenToPop = _screensStack.Pop();
         screenToPop.Release();
 

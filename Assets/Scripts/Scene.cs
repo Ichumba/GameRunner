@@ -20,4 +20,9 @@ public class Scene : MonoBehaviour
     {
         SceneManager.LoadScene("Nivel1");
     }
+
+    public void Exit()
+    {
+        Application.Quit();
+    }
 }

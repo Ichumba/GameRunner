@@ -28,6 +28,7 @@ public class GameplayScreen : MonoBehaviour, IScreen
         {
             if (!behaviour.enabled) continue;
             
+
             _previousStates.Add(behaviour);
             
             behaviour.enabled = false;

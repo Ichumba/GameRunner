@@ -19,6 +19,8 @@ public class ClientDebugger : MonoBehaviour
         {
             Debug.Log("Pausa");
             ScreenManager.Instance.Push(_pauseScreen);
+            Cursor.lockState = CursorLockMode.Confined;
+            Cursor.visible = true;
             Time.timeScale = 0f;  
         }
         else if (Input.GetKeyDown(KeyCode.Escape))
