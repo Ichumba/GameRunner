@@ -5,14 +5,14 @@ using UnityEngine;
 using UnityEngine.UI;
 
 [RequireComponent(typeof(Button))]
-public class GoToOptionsScreenOnClick : MonoBehaviour
+public class GoToScreenOnClick : MonoBehaviour
 {
-    [SerializeField] private SimpleUiScreen _optionsCanvas;
+    [SerializeField] private SimpleUiScreen _canvas;
 
     private void Awake()
     {
         var button = GetComponent<Button>();
         
-        button.onClick.AddListener(() => ScreenManager.Instance.Push(_optionsCanvas));
+        button.onClick.AddListener(() => ScreenManager.Instance.Push(_canvas));
     }
 }
